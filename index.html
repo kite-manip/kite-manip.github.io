@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KITE</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="content" style="display:block;">
+    <!-- HERO -->
+    <header class="full-page-image" id="hero">
+      <video id="bg-video" preload="auto" autoplay muted playsinline loop poster="assets/images/kite_teaser.png">
+        <source src="hero_video.m4v" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="bottom-overlay" style="padding:0 24px;">
+        <h1>KITE<br/>Decoupling Kinematics and Interaction for Zero-Shot Cross-Embodiment Manipulation</h1>
+      </div>
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" onclick="scrollToContent()">
+        ↓
+      </div>
+    </header>
+    
+    <!-- MAIN CONTENT BODY -->
+    <main class="main-content">
+      <div class="sub-hero-text">Decoupling Kinematics and Interaction for Zero-Shot Cross-Embodiment Manipulation</div>
+
+      <!-- Add Authors -->
+      <div class="authors">
+        <a href="https://qianxu.wang" target="_blank">Qianxu Wang</a>,
+        <a href="https://kuanfang.github.io/" target="_blank">Kuan Fang</a>
+        <div class="affiliation">Cornell University</div>
+      </div>
+      
+      <div class="main-video-container">
+        <video controls muted playsinline loop>
+          <source src="kite_video.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="tagline" id="abstract">Abstract</div>
+      <div class="section">
+        <figure class="paper-figure">
+          <img src="assets/images/kite_teaser.png" alt="KITE teaser figure" loading="eager" decoding="async">
+        </figure>
+        <p>
+          Generalizing manipulation policies across robot embodiments remains difficult because standard policies entangle task reasoning with embodiment-specific motor control. We study zero-shot cross-embodiment manipulation, where a policy trained on source embodiments must execute on a structurally different target embodiment without additional task demonstrations. We introduce <strong>K</strong>inematic <strong>I</strong>nteraction <strong>T</strong>ransfer across <strong>E</strong>mbodiments (<strong>KITE</strong>), which decouples manipulation into embodiment-agnostic task reasoning and embodiment-specific motor control, connected through a learned latent representation of interaction intent based on contact patterns. Task reasoning is performed by a shared policy that predicts latent interaction intents from source demonstrations, while motor control is performed by an intent-conditioned action decoder learned from each embodiment's kinematics model. With KITE, adaptation to a new embodiment requires only training a new action decoder using its kinematics model, without recollecting demonstration data. We evaluate KITE on three manipulation tasks spanning transfer between parallel grippers, dexterous hands, and composite embodiments. KITE consistently achieves zero-shot transfer to structurally different target embodiments, outperforming state-of-the-art baselines in transfer success and task-embodiment scope.
+        </p>
+      </div>
+
+      <div class="tagline" id="methods">Method</div>
+      <div class="section">
+        <figure class="paper-figure">
+          <img src="assets/images/kite_method_overview.png" alt="KITE method overview diagram" loading="eager" decoding="async">
+        </figure>
+        <p>
+          We decouple manipulation into an embodiment-agnostic policy &pi; and an embodiment-specific action decoder <i>g</i><sup>e</sup>, connected by the latent interaction intent <i>z</i>. The interaction intent describes where on the object the manipulator should make contact and in which direction it should act, agnostic to which body produces it. Decoder <i>g</i><sup>e</sup> learns from embodiments' kinematic models alone how that body achieves an interaction intent; &pi; learns from source demonstrations preprocessed into latent intents.
+        </p>
+      </div>
+
+      <div class="tagline" id="sim-experiment">Simulated Experiment</div>
+      <div class="section">
+        <p>
+          We evaluate zero-shot cross-embodiment transfer across three tasks and five embodiments in MuJoCo, including a parallel gripper, different dexterous hands, and a robot composite. For each task, the policy is trained from 800 source-demonstration episodes, while action decoders use only kinematic models with no target-task demonstrations. With no task demonstrations on target embodiments, KITE achieves 90&ndash;100% success across all nine transfer settings, beating all baselines by a large margin.
+        </p>
+
+        <article class="task-block">
+          <h2>Cube Picking</h2>
+          <div class="experiment-video-grid sim-grid" aria-label="Cube Picking videos">
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_demo.m4v" autoplay muted playsinline loop></video>
+              <figcaption>Example source demonstration episode from the Robotiq Gripper dataset</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_barrett.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Barrett</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_allegro_right.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Allegro</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_marvin_wuji.mp4" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on WujiHand</figcaption>
+            </figure>
+          </div>
+          <p class="figure-caption">
+            <b>Cube Picking:</b> A Robotiq gripper source demonstration transfers to three dexterous hands, testing simple-gripper to dexterous-hand zero-shot manipulation.
+          </p>
+        </article>
+
+        <article class="task-block">
+          <h2>Keyboard Pressing</h2>
+          <div class="experiment-video-grid sim-grid" aria-label="Keyboard Pressing videos">
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_demo.m4v" autoplay muted playsinline loop></video>
+              <figcaption>Example source demonstration episode from the WujiHand dataset</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_barrett.mp4" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Barrett</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_allegro_right.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Allegro</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_robotiq_gripper_stick_armless.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Robotiq+Stick</figcaption>
+            </figure>
+          </div>
+          <p class="figure-caption">
+            <b>Keyboard Pressing:</b> WujiHand demonstrations press a target key sequence and transfer to dexterous and composite target embodiments through the shared interaction-intent interface.
+          </p>
+        </article>
+
+        <article class="task-block">
+          <h2>Bottle Pumping</h2>
+          <div class="experiment-video-grid sim-grid" aria-label="Bottle Pumping videos">
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_demo.m4v" autoplay muted playsinline loop></video>
+              <figcaption>Example source demonstration episode from the WujiHand dataset</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_barrett.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Barrett</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_allegro_right.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Allegro</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_robotiq_gripper_stick_armless.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on Robotiq+Stick</figcaption>
+            </figure>
+          </div>
+          <p class="figure-caption">
+            <b>Bottle Pumping:</b> The source policy transfers a multi-stage interaction that must both lift the bottle and depress the pump, requiring task-relevant contacts to change over time.
+          </p>
+        </article>
+      </div>
+
+      <div class="tagline" id="real-experiment">Real Experiment</div>
+      <div class="section">
+        <p>
+          We deploy KITE on a physical WujiHand mounted on the Tianji-Marvin arm. All policies are trained in matched simulation and transferred to hardware with no task demonstrations on the target embodiment. KITE succeeds in 7&ndash;8 out of 10 trials across all three tasks, confirming zero-shot transfer under real perception and physics. Keyboard pressing and bottle pumping further use a human hand as the source embodiment, showing that the interaction-intent interface extends to human-to-robot transfer.
+        </p>
+
+        <article class="task-block">
+          <h2>Cube Picking</h2>
+          <div class="experiment-video-grid real-grid" aria-label="Real-world Cube Picking videos">
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_demo_real.m4v" autoplay muted playsinline loop></video>
+              <figcaption>Example source demonstration episode from the Robotiq Gripper dataset</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_wuji_real.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on real WujiHand</figcaption>
+            </figure>
+          </div>
+          <p class="figure-caption">
+            <b>Cube Picking:</b> Robotiq Gripper &rarr; WujiHand reaches 7/10 successes on physical hardware.
+          </p>
+        </article>
+
+        <article class="task-block">
+          <h2>Keyboard Pressing</h2>
+          <div class="experiment-video-grid real-grid" aria-label="Real-world Keyboard Pressing videos">
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_demo_real.m4v" autoplay muted playsinline loop></video>
+              <figcaption>Example source demonstration episode from the human-hand dataset</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_wuji_real.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on real WujiHand</figcaption>
+            </figure>
+          </div>
+          <p class="figure-caption">
+            <b>Keyboard Pressing:</b> Human Hand &rarr; WujiHand reaches 8/10 successes on physical hardware.
+          </p>
+        </article>
+
+        <article class="task-block">
+          <h2>Bottle Pumping</h2>
+          <div class="experiment-video-grid real-grid" aria-label="Real-world Bottle Pumping videos">
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_demo_real.m4v" autoplay muted playsinline loop></video>
+              <figcaption>Example source demonstration episode from the human-hand dataset</figcaption>
+            </figure>
+            <figure class="experiment-video-card">
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_wuji_real.m4v" autoplay muted playsinline loop></video>
+              <figcaption>KITE deployed on real WujiHand</figcaption>
+            </figure>
+          </div>
+          <p class="figure-caption">
+            <b>Bottle Pumping:</b> Human Hand &rarr; WujiHand reaches 7/10 successes on physical hardware.
+          </p>
+        </article>
+      </div>
+
+    <!-- End of main content -->
+    </main>
+    <footer class="footer">Some website materials are adapted from  <a href="https://www.videomimic.net/" target="_blank">VideoMimic</a> and <a href="https://transic-robot.github.io/" target="_blank">TRANSIC</a></footer>
+  </div>
+
+  <!-- ============================================================ -->
+  <!--  JS                                                          -->
+  <!-- ============================================================ -->
+  <script src="assets/js/full_screen_video.js"></script>
+  <script>
+    // Lazy loading for gallery videos only
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create intersection observer
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const video = entry.target;
+            // Start playing when video comes into view
+            if (video.paused) {
+              video.play().catch(e => console.log('Video play failed:', e));
+            }
+          } else {
+            const video = entry.target;
+            // Pause when video goes out of view (saves bandwidth)
+            if (!video.paused) {
+              video.pause();
+            }
+          }
+        });
+      }, {
+        threshold: 0.2 // Start playing when 20% of video is visible
+      });
+
+      // Apply lazy loading only to gallery videos (not hero or main video)
+      const galleryVideos = document.querySelectorAll('.gallery-video');
+      galleryVideos.forEach(video => {
+        // Remove autoplay attribute and observe
+        video.removeAttribute('autoplay');
+        videoObserver.observe(video);
+        
+        // Set up video to be ready to play
+        video.load();
+      });
+    });
+  </script>
+</body>
+</html>
