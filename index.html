@@ -26,7 +26,7 @@
     
     <!-- MAIN CONTENT BODY -->
     <main class="main-content">
-      <div class="sub-hero-text">Decoupling Kinematics and Interaction for Zero-Shot Cross-Embodiment Manipulation</div>
+      <div class="sub-hero-text">KITE: Decoupling Kinematics and Interaction for<br/>Zero-Shot Cross-Embodiment Manipulation</div>
 
       <!-- Add Authors -->
       <div class="authors">
@@ -44,17 +44,17 @@
       <div class="tagline" id="abstract">Abstract</div>
       <div class="section">
         <figure class="paper-figure">
-          <img src="assets/images/kite_teaser.png" alt="KITE teaser figure" loading="eager" decoding="async">
+          <img src="assets/images/kite_teaser_from_pdf.png" alt="KITE teaser figure" loading="eager" decoding="async">
         </figure>
         <p>
-          Generalizing manipulation policies across robot embodiments remains difficult because standard policies entangle task reasoning with embodiment-specific motor control. We study zero-shot cross-embodiment manipulation, where a policy trained on source embodiments must execute on a structurally different target embodiment without additional task demonstrations. We introduce <strong>K</strong>inematic <strong>I</strong>nteraction <strong>T</strong>ransfer across <strong>E</strong>mbodiments (<strong>KITE</strong>), which decouples manipulation into embodiment-agnostic task reasoning and embodiment-specific motor control, connected through a learned latent representation of interaction intent based on contact patterns. Task reasoning is performed by a shared policy that predicts latent interaction intents from source demonstrations, while motor control is performed by an intent-conditioned action decoder learned from each embodiment's kinematics model. With KITE, adaptation to a new embodiment requires only training a new action decoder using its kinematics model, without recollecting demonstration data. We evaluate KITE on three manipulation tasks spanning transfer between parallel grippers, dexterous hands, and composite embodiments. KITE consistently achieves zero-shot transfer to structurally different target embodiments, outperforming state-of-the-art baselines in transfer success and task-embodiment scope.
+          Generalizing manipulation policies across robot embodiments remains difficult because standard policies entangle task reasoning with embodiment-specific motor control. We study zero-shot cross-embodiment manipulation, where a policy trained on source embodiments must be deployed on a structurally different target embodiment without additional task demonstrations. We introduce <strong>K</strong>inematic <strong>I</strong>nteraction <strong>T</strong>ransfer across <strong>E</strong>mbodiments (<strong>KITE</strong>), which decouples manipulation into embodiment-agnostic task reasoning and embodiment-specific motor control, connected through a learned latent representation of interaction intent based on contact patterns. Task reasoning is performed by a shared policy that predicts latent intents from source demonstrations, while motor control is performed by an intent-conditioned action decoder learned from each embodiment's kinematic model. With KITE, adaptation to a new embodiment requires only training a new action decoder using its kinematic model, without recollecting demonstration data. We evaluate KITE on three manipulation tasks spanning transfer between parallel grippers, dexterous hands, and composite embodiments. KITE consistently achieves zero-shot transfer to structurally different target embodiments, outperforming state-of-the-art baselines in transfer success and task-embodiment scope.
         </p>
       </div>
 
       <div class="tagline" id="methods">Method</div>
       <div class="section">
         <figure class="paper-figure">
-          <img src="assets/images/kite_method_overview.png" alt="KITE method overview diagram" loading="eager" decoding="async">
+          <img src="assets/images/kite_method_overview_from_pdf.png" alt="KITE method overview diagram" loading="eager" decoding="async">
         </figure>
         <p>
           We decouple manipulation into an embodiment-agnostic policy &pi; and an embodiment-specific action decoder <i>g</i><sup>e</sup>, connected by the latent interaction intent <i>z</i>. The interaction intent describes where on the object the manipulator should make contact and in which direction it should act, agnostic to which body produces it. Decoder <i>g</i><sup>e</sup> learns from embodiments' kinematic models alone how that body achieves an interaction intent; &pi; learns from source demonstrations preprocessed into latent intents.
@@ -239,6 +239,12 @@
       galleryVideos.forEach(video => {
         // Remove autoplay attribute and observe
         video.removeAttribute('autoplay');
+        video.defaultPlaybackRate = 3;
+        video.playbackRate = 3;
+        video.addEventListener('loadedmetadata', () => {
+          video.defaultPlaybackRate = 3;
+          video.playbackRate = 3;
+        });
         videoObserver.observe(video);
         
         // Set up video to be ready to play
