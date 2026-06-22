@@ -238,6 +238,59 @@
         </article>
       </div>
 
+      <!-- ============================================================ -->
+      <!--  ANALYSIS SECTION                                            -->
+      <!-- ============================================================ -->
+      <div class="tagline" id="analysis">Analysis</div>
+      <div class="section">
+        <p>
+          We verify the necessity of the latent intent interface, confirm that kinematics-only supervision is sufficient for the action decoder, and characterize the decoder's robustness to initialization perturbations.
+        </p>
+
+        <div class="analysis-grid">
+
+          <!-- Card 1: Latent Intent Interface -->
+          <div class="analysis-card">
+            <div class="analysis-card-figure">
+              <img src="assets/images/analysis/latent_ablation.png" alt="Latent intent ablation bar chart">
+            </div>
+            <p class="analysis-card-text">
+              <b>Latent intent interface.</b> Removing the latent intent and letting the policy output raw contact sets drops average success rate by 12&ndash;24 points across tasks, with the gap widening on more contact-rich tasks.
+            </p>
+          </div>
+
+          <!-- Card 2: Kinematics-only Supervision -->
+          <div class="analysis-card">
+            <div class="analysis-card-figure">
+              <img src="assets/images/analysis/kinematics_sufficiency.png" alt="Effect of adding target-task demonstrations">
+            </div>
+            <p class="analysis-card-text">
+              <b>Kinematics-only supervision.</b> Adding up to 200 target-task demonstrations to the action decoder hardly improves success rate, confirming that the kinematics-only supervision is sufficient.
+            </p>
+          </div>
+
+          <!-- Card 3: Initialization Robustness -->
+          <div class="analysis-card">
+            <div class="analysis-card-table">
+              <table>
+                <thead><tr><th>Initialization</th><th>Succ.&thinsp;(%)</th></tr></thead>
+                <tbody>
+                  <tr><td>Base</td><td>100</td></tr>
+                  <tr><td>5&thinsp;cm, 30&deg;</td><td>100</td></tr>
+                  <tr><td>20&thinsp;cm, 60&deg;</td><td>81</td></tr>
+                  <tr><td>Flipped 180&deg;</td><td>62</td></tr>
+                  <tr><td>30&thinsp;cm shift</td><td>37</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="analysis-card-text">
+              <b>Initialization robustness.</b> The action decoder handles moderate perturbations well and only degrades when initialization departs far from the local contact neighborhood.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
       <div class="tagline" id="video-summary">Video Summary</div>
       <div class="section">
         <div class="main-video-container">

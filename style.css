@@ -251,5 +251,77 @@
      .source-video-card::before{top:10px;left:10px;font-size:12px;border-radius:7px;padding:6px 8px}
      .tagline{font-size:20px}
      .figure-caption{padding:0;font-size:13px}
+     .analysis-grid{grid-template-columns:1fr;gap:18px}
+     .analysis-card-text{font-size:14px}
    }
-   
+
+   /* ------------------------------------------------------------------
+      ANALYSIS SECTION — card grid
+      ------------------------------------------------------------------*/
+   .analysis-grid{
+     display:grid;
+     grid-template-columns:repeat(3,1fr);
+     gap:24px;
+     margin:28px 0 12px;
+   }
+   .analysis-card{
+     background:#f0ede7;
+     border-radius:14px;
+     padding:22px;
+     display:flex;
+     flex-direction:column;
+   }
+   .analysis-card-figure{
+     width:100%;
+     margin-bottom:16px;
+   }
+   .analysis-card-figure img{
+     width:100%;
+     border-radius:6px;
+     box-shadow:none;
+     background:transparent;
+   }
+   .analysis-card-table{
+     margin-bottom:14px;
+   }
+   .analysis-card-table table{
+     width:100%;
+     border-collapse:collapse;
+     font-family:"Avenir Next","Inter","Helvetica Neue",Arial,sans-serif;
+     font-size:13px;
+   }
+   .analysis-card-table thead th{
+     text-align:left;
+     font-weight:700;
+     padding:5px 8px;
+     border-bottom:2px solid #5b3e96;
+     color:#333;
+   }
+   .analysis-card-table thead th:last-child{
+     text-align:right;
+   }
+   .analysis-card-table tbody td{
+     padding:4px 8px;
+     border-bottom:1px solid #d5d0c8;
+     color:#444;
+   }
+   .analysis-card-table tbody td:last-child{
+     text-align:right;
+     font-weight:700;
+     color:#5b3e96;
+   }
+   .analysis-card-text{
+     font-size:15px;
+     line-height:1.55;
+     color:#333;
+     margin-top:auto;
+     margin-bottom:0;
+   }
+   .analysis-card-text b{
+     color:#111;
+   }
+
+   @media(max-width:980px){
+     .analysis-grid{grid-template-columns:1fr;gap:18px}
+   }
+
