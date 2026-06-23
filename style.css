@@ -198,6 +198,18 @@
    .source-video-card figcaption{color:#5b3e96}
    .task-block>.figure-caption{margin-bottom:0}
    .acknowledgement-section{margin-bottom:70px}
+   .bibtex-block{
+     background:#f0ede7;
+     border-radius:10px;
+     padding:20px 24px;
+     font-family:"Roboto Mono","SF Mono","Menlo",monospace;
+     font-size:13px;
+     line-height:1.6;
+     color:#333;
+     overflow-x:auto;
+     white-space:pre;
+     margin:0;
+   }
    .math-inline{font-family:"Latin Modern Math","STIX Two Math","Cambria Math","Times New Roman",serif;font-style:italic;font-size:1.05em;line-height:0;white-space:nowrap}
    .math-inline sup{font-size:.72em;line-height:0;position:relative;top:-.42em;margin-left:.02em}
    /* FOOTER */
