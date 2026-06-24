@@ -92,6 +92,64 @@
         </p>
       </div>
 
+      <div class="tagline" id="real-experiment">Real-World Experiments</div>
+      <div class="section">
+        <p>
+          We deploy KITE on a <b>WujiHand</b> mounted on a <b>Tianji-Marvin</b> arm in the real world. Every policy is trained in matched simulation and run on hardware with no task demonstrations on the target embodiment and no real-world fine-tuning. KITE succeeds in <b>7&ndash;8 of 10 trials</b> on all three tasks, confirming zero-shot transfer under real perception and physics. For keyboard pressing and bottle pumping, the source is a <b>human hand</b>, showing that KITE extends to human-to-robot transfer.
+        </p>
+
+        <article class="task-block">
+          <h2>Cube Picking</h2>
+          <p class="figure-caption">
+            Robotiq &rarr; Wuji reaches 7/10 successes on physical hardware.
+          </p>
+          <div class="experiment-video-grid real-grid" aria-label="Real-world Cube Picking videos">
+            <figure class="experiment-video-card source-video-card">
+              <span class="video-label video-label-source">Source: Robotiq</span>
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_demo_real.m4v" autoplay muted playsinline loop></video>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <span class="video-label video-label-target">Target: Wuji</span>
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_wuji_real.m4v" autoplay muted playsinline loop></video>
+            </figure>
+          </div>
+        </article>
+
+        <article class="task-block">
+          <h2>Keyboard Pressing</h2>
+          <p class="figure-caption">
+            Human Hand &rarr; Wuji reaches 8/10 successes on physical hardware.
+          </p>
+          <div class="experiment-video-grid real-grid" aria-label="Real-world Keyboard Pressing videos">
+            <figure class="experiment-video-card source-video-card">
+              <span class="video-label video-label-source">Source: Human Hand</span>
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_demo_real.m4v" autoplay muted playsinline loop></video>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <span class="video-label video-label-target">Target: Wuji</span>
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_wuji_real.m4v" autoplay muted playsinline loop></video>
+            </figure>
+          </div>
+        </article>
+
+        <article class="task-block">
+          <h2>Bottle Pumping</h2>
+          <p class="figure-caption">
+            Human Hand &rarr; Wuji reaches 7/10 successes on physical hardware.
+          </p>
+          <div class="experiment-video-grid real-grid" aria-label="Real-world Bottle Pumping videos">
+            <figure class="experiment-video-card source-video-card">
+              <span class="video-label video-label-source">Source: Human Hand</span>
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_demo_real.m4v" autoplay muted playsinline loop></video>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <span class="video-label video-label-target">Target: Wuji</span>
+              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_wuji_real.m4v" autoplay muted playsinline loop></video>
+            </figure>
+          </div>
+        </article>
+      </div>
+
       <div class="tagline" id="sim-experiment">Simulated Experiments</div>
       <div class="section">
         <p>
@@ -169,64 +227,6 @@
             <figure class="experiment-video-card target-video-card">
               <span class="video-label video-label-target">Target: Robotiq+Stick</span>
               <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_robotiq_gripper_stick_armless.m4v" autoplay muted playsinline loop></video>
-            </figure>
-          </div>
-        </article>
-      </div>
-
-      <div class="tagline" id="real-experiment">Real-World Experiments</div>
-      <div class="section">
-        <p>
-          We deploy KITE on a <b>WujiHand</b> mounted on a <b>Tianji-Marvin</b> arm in the real world. Every policy is trained in matched simulation and run on hardware with no task demonstrations on the target embodiment and no real-world fine-tuning. KITE succeeds in <b>7&ndash;8 of 10 trials</b> on all three tasks, confirming zero-shot transfer under real perception and physics. For keyboard pressing and bottle pumping, the source is a <b>human hand</b>, showing that KITE extends to human-to-robot transfer.
-        </p>
-
-        <article class="task-block">
-          <h2>Cube Picking</h2>
-          <p class="figure-caption">
-            Robotiq &rarr; Wuji reaches 7/10 successes on physical hardware.
-          </p>
-          <div class="experiment-video-grid real-grid" aria-label="Real-world Cube Picking videos">
-            <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Robotiq</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_demo_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_wuji_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-          </div>
-        </article>
-
-        <article class="task-block">
-          <h2>Keyboard Pressing</h2>
-          <p class="figure-caption">
-            Human Hand &rarr; Wuji reaches 8/10 successes on physical hardware.
-          </p>
-          <div class="experiment-video-grid real-grid" aria-label="Real-world Keyboard Pressing videos">
-            <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Human Hand</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_demo_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_wuji_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-          </div>
-        </article>
-
-        <article class="task-block">
-          <h2>Bottle Pumping</h2>
-          <p class="figure-caption">
-            Human Hand &rarr; Wuji reaches 7/10 successes on physical hardware.
-          </p>
-          <div class="experiment-video-grid real-grid" aria-label="Real-world Bottle Pumping videos">
-            <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Human Hand</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_demo_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_wuji_real.m4v" autoplay muted playsinline loop></video>
             </figure>
           </div>
         </article>
