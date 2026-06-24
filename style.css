@@ -182,6 +182,7 @@
     }
    
    .section{font-size:16px;line-height:1.7;margin:0 0 40px;text-align:left}
+   .abstract-section{max-width:800px;margin-left:auto;margin-right:auto}
    .section p{margin:0 0 28px}
    .method-points{margin:-12px 0 28px;padding-left:24px}
    .method-points li{margin:0 0 12px}
@@ -189,14 +190,21 @@
    .task-block h2{font-family:"Avenir Next","Inter","Helvetica Neue",Arial,sans-serif;font-size:20px;font-weight:700;margin:0 0 16px;color:#111}
    .experiment-video-grid{display:grid;gap:14px;margin:0 0 14px}
    .sim-grid,.real-grid{grid-template-columns:repeat(2,max-content);justify-content:start}
+   .triple-grid{grid-template-columns:repeat(3,1fr)}
+   .triple-grid .experiment-video-card{width:100%}
+   .triple-grid .gallery-video{width:100%;height:auto}
    .experiment-video-card{position:relative;width:max-content;max-width:100%;margin:0;display:flex;flex-direction:column;align-items:flex-start}
-   .experiment-video-card::after{content:"3x";position:absolute;top:12px;right:12px;z-index:3;background:rgba(0,0,0,.72);color:#fff;border-radius:10px;padding:7px 11px;font-family:Arial,sans-serif;font-size:22px;font-weight:800;line-height:1;letter-spacing:0;pointer-events:none}
+   .experiment-video-card::after{content:"3x";position:absolute;top:12px;right:12px;z-index:3;background:rgba(0,0,0,.72);color:#fff;border-radius:8px;padding:7px 10px;font-family:"Avenir Next","Inter","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:400;line-height:1;letter-spacing:0;pointer-events:none}
    .experiment-video-card .gallery-video{display:block;width:auto;height:260px;max-width:100%;object-fit:cover}
-   .source-video-card::before{content:"Source";position:absolute;top:12px;left:12px;z-index:3;background:#5b3e96;color:#fff;border-radius:8px;padding:7px 10px;font-family:"Avenir Next","Inter","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;line-height:1;letter-spacing:0;pointer-events:none}
    .source-video-card .gallery-video{outline:3px solid #5b3e96;outline-offset:3px;box-shadow:0 0 0 6px rgba(91,62,150,.12),0 4px 12px rgba(0,0,0,.15)}
-   .experiment-video-card figcaption{width:100%;max-width:100%;box-sizing:border-box;font-family:"Avenir Next","Inter","Helvetica Neue",Arial,sans-serif;font-size:14px;font-weight:700;color:#253238;line-height:1.35;text-align:left;margin:10px 0 0}
-   .source-video-card figcaption{color:#5b3e96}
-   .task-block>.figure-caption{margin-bottom:0}
+   .target-video-card .gallery-video{}
+   .video-label{position:absolute;top:12px;left:12px;z-index:3;color:#fff;border-radius:8px;padding:7px 10px;font-family:"Avenir Next","Inter","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;line-height:1;pointer-events:none}
+   .video-label-source{background:#5b3e96}
+   .video-label-target{background:#c07830}
+   .video-label-kite{background:#5b3e96}
+   .video-label-baseline{background:rgba(0,0,0,.72)}
+   .experiment-video-card.no-badge::after{display:none}
+   .task-block>.figure-caption{margin-bottom:14px;margin-top:0}
    .acknowledgement-section{margin-bottom:70px}
    .bibtex-block{
      background:#f0ede7;
@@ -247,10 +255,10 @@
 
    @media(max-width:980px){
      .task-block{width:min(100%,620px)}
-     .sim-grid,.real-grid{grid-template-columns:1fr}
+     .sim-grid,.real-grid,.triple-grid{grid-template-columns:1fr}
      .experiment-video-card{width:100%}
      .experiment-video-card .gallery-video{width:100%;height:auto;aspect-ratio:16/9}
-     .experiment-video-card figcaption{width:100%}
+     .experiment-video-card .video-label{font-size:12px}
    }
 
    @media(max-width:720px){
@@ -259,8 +267,8 @@
      .quick-links{gap:10px;margin:4px 0 34px}
      .quick-links .quick-btn{min-width:128px;min-height:50px;padding:0 18px;font-size:16px}
      .section{font-size:17px;line-height:1.65}
-     .experiment-video-card::after{top:10px;right:10px;font-size:18px;border-radius:8px;padding:6px 9px}
-     .source-video-card::before{top:10px;left:10px;font-size:12px;border-radius:7px;padding:6px 8px}
+     .experiment-video-card::after{top:10px;right:10px;font-size:12px;border-radius:7px;padding:6px 8px}
+     .video-label{top:10px;left:10px;font-size:12px;border-radius:7px;padding:6px 8px}
      .tagline{font-size:20px}
      .figure-caption{padding:0;font-size:13px}
      .analysis-grid{grid-template-columns:1fr;gap:18px}
