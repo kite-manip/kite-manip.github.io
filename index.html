@@ -3,34 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KITE</title>
+  <title>KITE: Zero-Shot Cross-Embodiment Manipulation</title>
+  <meta name="description" content="KITE transfers manipulation skills across robot embodiments through interaction prediction and kinematic decoding, using source demonstrations and target kinematics.">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=official-20261002-r1" />
 </head>
 <body>
   <div id="content" style="display:block;">
     <!-- HERO -->
-    <header class="full-page-image" id="hero">
-      <video id="bg-video" preload="auto" autoplay muted playsinline loop poster="assets/images/hero_poster.jpg">
-        <source src="hero_video.mp4" type="video/mp4" />
-      </video>
-      <div class="overlay"></div>
-      <div class="bottom-overlay" style="padding:0 24px;">
-        <h1>KITE<br/>Decoupling Kinematics and Interaction for Zero-Shot Cross-Embodiment Manipulation</h1>
+    <!-- Each slide: real-world Wuji rollout with its source demonstration burned in as a PiP.
+         data-pip is the PiP rectangle in video pixels; labels are placed relative to it. -->
+    <header class="full-page-image hero" id="hero" data-version="hero-3" data-video-size="1920,1080" data-pip="96,112,560,315">
+      <div class="hero-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Zero-shot transfer to a real Wuji hand">
+        <figure class="hero-slide" data-src="assets/videos/hero/nut_rotating" aria-roledescription="slide" aria-label="1 of 4: Nut Rotating">
+          <video class="hero-video" muted playsinline preload="none" draggable="false" poster="assets/images/posters/hero_nut_rotating.jpg?v=hero-3" aria-hidden="true"></video>
+          <p class="hero-task">Nut Rotating</p>
+          <figcaption class="hero-transfer">
+            <span class="hero-chip hero-chip-source"><span class="hero-chip-role">Source demo</span><span class="hero-chip-name">XHand</span></span>
+            <span class="hero-arrow"><span>Zero-shot</span><i></i><span>Closed-loop policy</span></span>
+            <span class="hero-chip hero-chip-target"><span class="hero-chip-role">Target</span><span class="hero-chip-name">Wuji hand</span></span>
+          </figcaption>
+          <span class="speed-badge hero-speed-badge" aria-label="4 times speed">4&times;</span>
+        </figure>
+        <figure class="hero-slide" data-src="assets/videos/hero/objects_placing" aria-roledescription="slide" aria-label="2 of 4: Objects Placing">
+          <video class="hero-video" muted playsinline preload="none" draggable="false" poster="assets/images/posters/hero_objects_placing.jpg?v=speed-2" aria-hidden="true"></video>
+          <p class="hero-task">Objects Placing</p>
+          <figcaption class="hero-transfer">
+            <span class="hero-chip hero-chip-source"><span class="hero-chip-role">Source demo</span><span class="hero-chip-name">Robotiq</span></span>
+            <span class="hero-arrow"><span>Zero-shot</span><i></i><span>Closed-loop policy</span></span>
+            <span class="hero-chip hero-chip-target"><span class="hero-chip-role">Target</span><span class="hero-chip-name">Wuji hand</span></span>
+          </figcaption>
+          <span class="speed-badge hero-speed-badge" aria-label="3 times speed">3&times;</span>
+        </figure>
+        <figure class="hero-slide" data-src="assets/videos/hero/keyboard_pressing" aria-roledescription="slide" aria-label="3 of 4: Keyboard Pressing">
+          <video class="hero-video" muted playsinline preload="none" draggable="false" poster="assets/images/posters/hero_keyboard_pressing.jpg?v=speed-2" aria-hidden="true"></video>
+          <p class="hero-task">Keyboard Pressing</p>
+          <figcaption class="hero-transfer">
+            <span class="hero-chip hero-chip-source"><span class="hero-chip-role">Source demo</span><span class="hero-chip-name">Human hand</span></span>
+            <span class="hero-arrow"><span>Zero-shot</span><i></i><span>Closed-loop policy</span></span>
+            <span class="hero-chip hero-chip-target"><span class="hero-chip-role">Target</span><span class="hero-chip-name">Wuji hand</span></span>
+          </figcaption>
+          <span class="speed-badge hero-speed-badge" aria-label="3 times speed">3&times;</span>
+        </figure>
+        <figure class="hero-slide" data-src="assets/videos/hero/bottles_pumping" aria-roledescription="slide" aria-label="4 of 4: Bottles Pumping">
+          <video class="hero-video" muted playsinline preload="none" draggable="false" poster="assets/images/posters/hero_bottles_pumping.jpg?v=speed-2" aria-hidden="true"></video>
+          <p class="hero-task">Bottles Pumping</p>
+          <figcaption class="hero-transfer">
+            <span class="hero-chip hero-chip-source"><span class="hero-chip-role">Source demo</span><span class="hero-chip-name">Human hand</span></span>
+            <span class="hero-arrow"><span>Zero-shot</span><i></i><span>Closed-loop policy</span></span>
+            <span class="hero-chip hero-chip-target"><span class="hero-chip-role">Target</span><span class="hero-chip-name">Wuji hand</span></span>
+          </figcaption>
+          <span class="speed-badge hero-speed-badge" aria-label="3 times speed">3&times;</span>
+        </figure>
+      </div>
+      <div class="hero-steps" role="group" aria-label="Tasks">
+        <button type="button" class="hero-step" aria-label="Nut Rotating"><i></i></button>
+        <button type="button" class="hero-step" aria-label="Objects Placing"><i></i></button>
+        <button type="button" class="hero-step" aria-label="Keyboard Pressing"><i></i></button>
+        <button type="button" class="hero-step" aria-label="Bottles Pumping"><i></i></button>
+      </div>
+      <button type="button" class="hero-next" aria-label="Next task"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <div class="bottom-overlay">
+        <h1><span class="hero-name">KITE</span><span class="hero-sub">Decoupling Kinematics and Interaction for<br>Zero-Shot Cross-Embodiment Manipulation</span></h1>
       </div>
       <!-- Scroll indicator -->
-      <div class="scroll-indicator" onclick="scrollToContent()">
+      <button class="scroll-indicator" onclick="scrollToContent()" aria-label="Scroll to project details">
         ↓
-      </div>
+      </button>
     </header>
     
     <!-- MAIN CONTENT BODY -->
     <main class="main-content">
       <div class="sub-hero-text">KITE: Decoupling Kinematics and Interaction for<br/>Zero-Shot Cross-Embodiment Manipulation</div>
 
-      <!-- Add Authors -->
+      <!-- Authors and affiliation -->
       <div class="authors">
         <a href="https://qianxu.wang" target="_blank">Qianxu Wang</a>,
+        Shengmiao Samuel Jin,
         <a href="https://kuanfang.github.io/" target="_blank">Kuan Fang</a>
         <div class="affiliation">Cornell University</div>
       </div>
@@ -57,373 +106,671 @@
         </a>
       </nav>
 
-      <figure class="paper-figure teaser-figure">
-        <img src="assets/images/kite_teaser_from_pdf.png" alt="KITE teaser figure" loading="eager" decoding="async">
-        <p class="figure-caption">
-          We consider the problem of zero-shot cross-embodiment transfer for dexterous manipulation, where task demonstrations are available only on a source embodiment. To address this, KITE decouples manipulation into embodiment-agnostic task reasoning (<span class="caption-green">green</span>) and embodiment-specific motor control (<span class="caption-blue">blue</span>), connected by a learned latent representation of interaction intent.
-        </p>
-      </figure>
+      <h2 class="tagline" id="abstract">Abstract</h2>
+      <section class="section" aria-labelledby="abstract">
+        <div class="abstract-section"><p>Generalizing manipulation policies across robot embodiments remains difficult because standard policies tie the interactions needed for a task to the actions of a particular robot. We study zero-shot cross-embodiment manipulation, where a policy trained on source embodiments must be deployed on a structurally different target embodiment without additional task demonstrations. We introduce <strong>K</strong>inematic <strong>I</strong>nteraction <strong>T</strong>ransfer across <strong>E</strong>mbodiments (<strong>KITE</strong>), which decouples manipulation into embodiment-agnostic interaction prediction and embodiment-specific kinematic decoding, connected through a learned representation of interaction intent based on contact patterns. An interaction policy is trained to predict the intent using demonstration data only collected on a source robot, and shared across morphologically different target robots. A kinematic decoder realizes these intents by learning from synthetic data generated from each embodiment's kinematic model. Through such decoupling, KITE can robustly transfer learned skills to a new embodiment given only its kinematic model, without recollecting any task-specific demonstration data. We evaluate KITE on four manipulation tasks in simulation and the real world spanning transfer between parallel grippers, dexterous hands, and composite embodiments. KITE successfully achieves zero-shot transfer to structurally different target embodiments, and consistently outperforms state-of-the-art baselines.</p></div>
+      </section>
 
-      <div class="tagline" id="abstract">Abstract</div>
-      <div class="section abstract-section">
-        <p>
-          Generalizing manipulation policies across robot embodiments remains difficult because standard policies entangle task reasoning with embodiment-specific motor control. We study zero-shot cross-embodiment manipulation, where a policy trained on source embodiments must be deployed on a structurally different target embodiment without additional task demonstrations. We introduce <strong>K</strong>inematic <strong>I</strong>nteraction <strong>T</strong>ransfer across <strong>E</strong>mbodiments (<strong>KITE</strong>), which decouples manipulation into embodiment-agnostic task reasoning and embodiment-specific motor control, connected through a learned latent representation of interaction intent based on contact patterns. Task reasoning is performed by a shared policy that predicts latent intents from source demonstrations, while motor control is performed by an intent-conditioned action decoder learned from each embodiment's kinematic model. With KITE, adaptation to a new embodiment requires only training a new action decoder using its kinematic model, without recollecting demonstration data. We evaluate KITE on three manipulation tasks spanning transfer between parallel grippers, dexterous hands, and composite embodiments. KITE consistently achieves zero-shot transfer to structurally different target embodiments, outperforming state-of-the-art baselines in transfer success and task-embodiment scope.
-        </p>
-      </div>
+      <h2 class="tagline" id="methods">Kinematic Interaction Transfer across Embodiments (KITE)</h2>
+      <section class="section method-section" aria-labelledby="methods">
+        <!-- Interactive method figure (assets/js/method_figure.js). Elements carry data-km keys;
+             .km-term spans in the text light up the elements that share their key. -->
+        <p class="method-lede">KITE enables cross-embodiment transfer without recollecting demonstration data for target robots. It decouples manipulation into embodiment-agnostic <span class="km-term km-term-green" tabindex="0" data-km-link="pi" data-km-open="policy">interaction prediction</span> and embodiment-specific <span class="km-term km-term-blue" tabindex="0" data-km-link="dec" data-km-open="decoder">kinematic decoding</span>, connected through a learned, contact-based representation of <span class="km-term km-term-green km-term-strong" tabindex="0" data-km-link="z contact" data-km-open="intent">interaction intent</span>.</p>
 
-      <div class="tagline" id="methods">Kinematic Interaction Transfer across Embodiments (KITE)</div>
-      <div class="section">
-        <p>
-          KITE decouples task reasoning and motor control through a learned, contact-based representation of <b>interaction intent</b>:
-        </p>
-        <ul class="method-points">
-          <li>
-            <b>Embodiment-specific motor control.</b> A generalist action decoder turns a latent intent into motor commands for a specific robot. It is trained solely from the robot's kinematic model, with no task demonstrations.
-          </li>
-          <li>
-            <b>Embodiment-agnostic task reasoning.</b> A shared policy learns what interaction should happen rather than how a particular body should move. It is trained from ordinary task demonstrations, converted into the latent-intent space.
-          </li>
-        </ul>
-        <figure class="paper-figure">
-          <img src="assets/images/kite_method_overview_from_pdf.png" alt="KITE method overview diagram" loading="eager" decoding="async">
+        <figure class="km" id="kite-method" aria-label="KITE inference loop beside a real-world Wuji hand rollout. Select the interaction policy, the latent intent, or the kinematic decoder to see how each is learned.">
+          <!-- Embodiment-specific learning: opens upward from the kinematic decoder -->
+          <div class="km-drawer km-drawer-up" id="km-panel-decoder" inert>
+            <div class="km-drawer-inner"><div class="km-drawer-pad">
+              <section class="km-panel km-panel-blue" aria-labelledby="km-decoder-title">
+                <header class="km-panel-head">
+                  <div>
+                    <p class="km-kicker">Embodiment-specific learning</p>
+                    <h3 id="km-decoder-title">Kinematic decoding, learned from kinematic models</h3>
+                  </div>
+                  <button type="button" class="km-close" data-panel="decoder" aria-label="Collapse kinematic decoding details"><i></i></button>
+                </header>
+                <div class="km-panel-body">
+                  <div class="km-block" data-km-group="synth" style="--i:1">
+                    <p class="km-block-title"><svg class="km-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg>Data synthesis</p>
+                    <div class="km-steps km-graph" data-edges="qc:r>qi:l|b; qi:r>qg:l|b" data-edges-narrow="qc:b>qi:t|b; qi:b>qg:t|b">
+                      <svg class="km-wires" aria-hidden="true"></svg>
+                      <figure class="km-step" data-km="qcontact contact"
+                              data-tip-title="Contact configuration <i>q</i><sub class='up'>contact</sub>"
+                              data-tip="A configuration sampled within the joint limits, with a few points selected on the embodiment's surface. Their positions and outward normals form an interaction intent <i>c</i> that the embodiment realizes at this configuration by construction.">
+                        <div class="km-step-img" data-node="qc"><svg class="km-scene" viewBox="1137.3 101.3 86.8 73.6" aria-hidden="true"><image href="assets/images/method/wuji_contact.webp" x="1138.8" y="102.8" width="83.8" height="70.6"/><g class="km-contacts"><g class="km-contact"><line x1="1198.1" y1="111.4" x2="1190" y2="118.2"/><polygon points="1185.8,121.6 1188.3,114.9 1192.9,120.4"/><circle cx="1198.1" cy="111.4" r="5.4"/></g><g class="km-contact"><line x1="1171.7" y1="123.4" x2="1180.3" y2="117.3"/><polygon points="1184.8,114.2 1181.7,120.7 1177.6,114.8"/><circle cx="1171.7" cy="123.4" r="5.4"/></g></g></svg></div>
+                        <figcaption class="km-m km-q">q<sub class="km-up">contact</sub></figcaption>
+                      </figure>
+                      <div class="km-step-link"><span>Perturbation</span></div>
+                      <figure class="km-step" data-km="qinit"
+                              data-tip-title="Initial configuration <i>q</i><sub class='up'>init</sub>"
+                              data-tip="A random perturbation of <i>q</i><sub class='up'>contact</sub>. The decoder learns to move from here to a configuration that realizes the interaction intent <i>c</i>.">
+                        <div class="km-step-img" data-node="qi"><img src="assets/images/method/wuji_init.webp" width="720" height="629" alt="" loading="lazy" decoding="async"></div>
+                        <figcaption class="km-m km-q">q<sub class="km-up">init</sub></figcaption>
+                      </figure>
+                      <div class="km-step-link"><span>Masking</span></div>
+                      <figure class="km-step" data-km="qgoal"
+                              data-tip-title="Goal configuration <i>q</i><sub class='up'>goal</sub>"
+                              data-tip="Joints that move the selected points (blue) return to <i>q</i><sub class='up'>contact</sub>; all other joints (gray) stay at <i>q</i><sub class='up'>init</sub>. The decoder thus learns to move only the joints that affect the intended contacts.">
+                        <div class="km-step-img" data-node="qg"><img src="assets/images/method/wuji_goal.webp" width="720" height="629" alt="" loading="lazy" decoding="async"></div>
+                        <figcaption class="km-m km-q">q<sub class="km-up">goal</sub></figcaption>
+                      </figure>
+                    </div>
+                    <div class="km-across">
+                      <p class="km-across-label">Same recipe for every embodiment</p>
+                      <div class="km-across-row">
+                        <figure data-km="synth-ex" style="--h:129" data-tip-title="Barrett" data-tip="A synthesized training triple: <i>q</i><sub class='up'>goal</sub> solid (moved links blue, held links gray), <i>q</i><sub class='up'>init</sub> as a faded overlay, and the interaction intent <i>c</i> in green."><svg class="km-scene" viewBox="704 126.4 90.3 129" aria-hidden="true"><image href="assets/images/method/synth_barrett.webp" x="705.5" y="127.9" width="87.3" height="126"/><g class="km-contacts"><g class="km-contact"><line x1="756.7" y1="228.7" x2="746.2" y2="228.8"/><polygon points="740.8,228.8 747,225.2 747,232.4"/><circle cx="756.7" cy="228.7" r="5.4"/></g><g class="km-contact"><line x1="728.9" y1="219.9" x2="739.4" y2="220.7"/><polygon points="744.8,221.1 738.3,224.2 738.9,217"/><circle cx="728.9" cy="219.9" r="5.4"/></g></g></svg><figcaption>Barrett</figcaption></figure>
+                        <figure data-km="synth-ex" style="--h:120.6" data-tip-title="Allegro" data-tip="A synthesized training triple: <i>q</i><sub class='up'>goal</sub> solid (moved links blue, held links gray), <i>q</i><sub class='up'>init</sub> as a faded overlay, and the interaction intent <i>c</i> in green."><svg class="km-scene" viewBox="-1.5 -1.5 163.5 120.6" aria-hidden="true"><image href="assets/images/method/synth_allegro.webp" x="0" y="0" width="160.5" height="117.6"/><g class="km-contacts"><g class="km-contact"><line x1="38.5" y1="65.4" x2="44.6" y2="65.4"/><polygon points="50,65.4 43.8,61.8 43.8,69"/><circle cx="38.5" cy="65.4" r="5.4"/></g><g class="km-contact"><line x1="80.8" y1="66.7" x2="74.7" y2="66.7"/><polygon points="69.3,66.7 75.5,70.3 75.5,63.1"/><circle cx="80.8" cy="66.7" r="5.4"/></g></g></svg><figcaption>Allegro</figcaption></figure>
+                        <figure data-km="synth-ex" style="--h:116.8" data-tip-title="Wuji" data-tip="A synthesized training triple: <i>q</i><sub class='up'>goal</sub> solid (moved links blue, held links gray), <i>q</i><sub class='up'>init</sub> as a faded overlay, and the interaction intent <i>c</i> in green."><svg class="km-scene" viewBox="1008.2 123.2 106.6 116.8" aria-hidden="true"><image href="assets/images/method/synth_wuji.webp" x="1009.7" y="124.7" width="103.6" height="113.8"/><g class="km-contacts"><g class="km-contact"><line x1="1094.2" y1="167.9" x2="1083.6" y2="168"/><polygon points="1078.2,168 1084.4,164.4 1084.4,171.6"/><circle cx="1094.2" cy="167.9" r="5.4"/></g><g class="km-contact"><line x1="1060" y1="158.8" x2="1070.5" y2="159.6"/><polygon points="1075.9,160 1069.5,163.1 1070,155.9"/><circle cx="1060" cy="158.8" r="5.4"/></g></g></svg><figcaption>Wuji</figcaption></figure>
+                        <figure data-km="synth-ex" style="--h:109.9" data-tip-title="Robotiq+Stick" data-tip="A synthesized training triple: <i>q</i><sub class='up'>goal</sub> solid (moved links blue, held links gray), <i>q</i><sub class='up'>init</sub> as a faded overlay, and the interaction intent <i>c</i> in green."><svg class="km-scene" viewBox="843.2 127.2 148.2 109.9" aria-hidden="true"><image href="assets/images/method/synth_robotiq_stick.webp" x="844.7" y="128.7" width="145.2" height="106.9"/><g class="km-contacts"><g class="km-contact"><line x1="917.8" y1="207.4" x2="907.2" y2="207.5"/><polygon points="901.8,207.5 908,203.9 908,211.1"/><circle cx="917.8" cy="207.4" r="5.4"/></g><g class="km-contact"><line x1="892.5" y1="214.9" x2="903.1" y2="215.6"/><polygon points="908.4,216.1 902,219.2 902.6,212"/><circle cx="892.5" cy="214.9" r="5.4"/></g></g></svg><figcaption>Robotiq+Stick</figcaption></figure>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="km-handoff" aria-hidden="true" style="--i:2"><i></i></div>
+                  <div class="km-block" data-km-group="train-dec" style="--i:3">
+                    <p class="km-block-title"><svg class="km-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="4" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="12" cy="9" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 6.8l4 1.6M5.6 7.4l4.8 6.2M5.6 16.6l4.8-6.2M6 17.2l4-1.6M14 9.6l4 1.6M14 14.4l4-1.6"/></svg>Model training</p>
+                    <div class="km-train-dec km-graph" data-edges="tc:r>tpsi:l|g; tpsi:r>tz:l|g; tz:b>tg:t@x|g; tqi:r>tg:l|b; tg:r>tqg:l|b">
+                      <svg class="km-wires" aria-hidden="true"></svg>
+                      <div class="km-tnode km-t-c" data-km="contact" data-tip-title="Interaction intent <i>c</i>" data-tip="Contact locations and outward surface normals on the embodiment's own surface, sampled at <i>q</i><sub class='up'>contact</sub> without any object model."><span class="km-glyph-c" data-node="tc"><svg viewBox="403 157 38 25" aria-hidden="true"><g class="km-contacts"><g class="km-contact"><line x1="410.4" y1="163.9" x2="420.3" y2="166.8"/><polygon points="425.8,168.1 418.8,170.1 420.5,163.1"/><circle cx="410.4" cy="163.9" r="5.7"/></g><g class="km-contact"><line x1="435.2" y1="165" x2="427.5" y2="171.4"/><polygon points="423.2,175 425.4,168.1 430,173.6"/><circle cx="435.2" cy="165" r="5.7"/></g></g></svg></span><span class="km-m km-c">c</span></div>
+                      <div class="km-tchain">
+                        <span class="km-box km-box-shared km-m" data-node="tpsi" data-km="psi" data-tip-title="Intent encoder <i>&psi;</i>" data-tip="A permutation-invariant set encoder shared by all embodiments. It maps an unordered, variable-size interaction intent <i>c</i> to a fixed-dimensional latent intent <i>z</i>.">&psi;</span>
+                        <span class="km-tz" data-km="z" data-tip-title="Latent intent <i>z</i>" data-tip="The fixed-dimensional encoding <i>z</i> = <i>&psi;</i>(<i>c</i>) that conditions the decoder."><span class="km-m km-z">z</span><span class="km-latent" data-node="tz"></span></span>
+                      </div>
+                      <div class="km-tnode km-t-qi" data-km="qinit" data-node="tqi"><span class="km-m km-q">q<sub class="km-up">init</sub></span></div>
+                      <span class="km-box km-box-dec km-m" data-node="tg" data-km="dec proj" data-km-rel="psi" data-tip-title="Decoder bank {<i>g</i><sup>e</sup>}" data-tip="One decoder per embodiment, trained jointly with the <em class='t-gray'>intent encoder <i>&psi;</i></em> to predict <i>q</i><sub class='up'>goal</sub> from <i>z</i> and <i>q</i><sub class='up'>init</sub>. All decoders share one backbone; only the input and output projectors (hatched) are embodiment-specific."><i class="km-proj"></i><span>g<sup>e</sup></span><i class="km-proj"></i></span>
+                      <div class="km-tnode km-t-qg" data-km="qgoal" data-node="tqg"><span class="km-m km-q">q<sub class="km-up">goal</sub></span></div>
+                    </div>
+                    <div class="km-legend"><span><i class="km-sw-shared"></i>Shared</span><span><i class="km-sw-specific"></i>Specific</span></div>
+                  </div>
+                </div>
+                <p class="km-caption" style="--i:4"><b class="km-lead-blue">Embodiment-specific kinematic decoding.</b> A kinematic decoder maps a <span class="km-term km-term-green" tabindex="0" data-km-link="z">latent intent</span> and the embodiment's current configuration to a <span class="km-term km-term-blue" tabindex="0" data-km-link="qgoal">goal configuration</span> that realizes the intended interaction. The <span class="km-term km-term-gray" tabindex="0" data-km-link="psi">intent encoder</span> and <span class="km-term km-term-blue" tabindex="0" data-km-link="dec">decoder bank</span> are trained jointly on <span class="km-term km-term-blue" tabindex="0" data-km-link="synth">synthetic data</span> generated from the kinematic models of the source and target embodiments, without any task demonstrations.</p>
+              </section>
+            </div></div>
+          </div>
+
+          <!-- A real-world photo card beside the method card. The loop reads bottom to top: each module
+               takes one input from below and one from the right, and z_t is fed back as z_{t-1}.
+               Leader lines run from the decoder and the policy to what they produce in the photo.
+               ^ is each wire's draw-in delay (s); the live signal that runs along them is timed in JS. -->
+          <div class="km-strip km-graph" id="km-strip"
+               data-edges="obs:t>pi:b|n^0; zprev:l>pi:r|g^0.15; pi:t>z:b|g^0.15; z:t>dec:b|g^0.3; state:l>dec:r|b^0.45; dec:t>act:b|b^0.45; z:r>zprev:t~loop|g^0.3; dec:l>rdec:r~lead|b^0.7; pi:l>rpi:r~lead|g^0.7"
+               data-edges-narrow="obs:t>pi:b|n^0; zprev:l>pi:r|g^0.15; pi:t>z:b|g^0.15; z:t>dec:b|g^0.3; state:l>dec:r|b^0.45; dec:t>act:b|b^0.45; z:r>zprev:t~loop|g^0.3">
+            <svg class="km-wires" aria-hidden="true"></svg>
+
+            <!-- Real-world scene, in the bottle photo's pixel coordinates. Overlays share data-km keys
+                 with the modules, so the modules light the photo. -->
+            <div class="km-real">
+              <svg class="km-real-scene" viewBox="1488 428 1408 1312" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A Wuji hand on a robot arm moves from its current pose down onto a pump bottle, touching it at three places.">
+                <defs>
+                  <radialGradient id="km-real-glow">
+                    <stop offset="0" stop-color="#6fd23f" stop-opacity=".95"/>
+                    <stop offset=".42" stop-color="#52b82a" stop-opacity=".62"/>
+                    <stop offset="1" stop-color="#46aa21" stop-opacity="0"/>
+                  </radialGradient>
+                  <path id="km-real-bottle" d="M1886,1167 L2094,1187 Q2130,1192 2137,1210 L2133,1220 L2094,1220 L2094,1367 Q2150,1380 2165,1430 L2172,1525 L2266,1600 Q2292,1612 2292,1640 L2292,2100 L1752,2100 L1752,1640 Q1752,1612 1778,1600 L1869,1525 L1876,1430 Q1890,1380 1944,1367 L1944,1220 L1889,1220 Z"/>
+                </defs>
+                <image class="km-real-photo" href="assets/images/method/real_photo.webp" x="1360" y="290" width="1550" height="1800" preserveAspectRatio="none"/>
+                <rect class="km-real-veil" x="1360" y="290" width="1550" height="1800"/>
+                <g class="km-real-obj" data-km="obs"
+                      data-tip-title="Observation <i>o</i><sub><i>t</i></sub>"
+                      data-tip="The policy sees only the bottle, as a point cloud from external cameras. The robot is excluded.">
+                  <image href="assets/images/method/real_obs.webp" x="1729.7" y="1146.1" width="584.8" height="943.9"/>
+                  <use class="km-real-hit" href="#km-real-bottle"/>
+                </g>
+                <g class="km-real-ghost" data-km="state" data-km-open="decoder" role="button" tabindex="0" aria-label="Robot state. Show how the kinematic decoder is trained."
+                   data-tip-title="Robot state <i>q</i><sup><i>e</i></sup><sub><i>t</i></sub>"
+                   data-tip="The Wuji hand's current configuration. The <em class='t-blue'>kinematic decoder</em> moves it from here to a configuration that makes the intended contacts.">
+                  <image href="assets/images/method/real_ghost.webp" x="1487.7" y="318.1" width="1422.5" height="887.7"/>
+                  <path class="km-real-hit" d="M1510,640 L1640,470 L1850,430 L2250,520 L2500,500 L2910,420 L2910,1000 L2600,1020 L2420,950 L2300,880 L1900,760 L1560,720 Z"/>
+                </g>
+                <g class="km-real-hand" data-km="act dec" data-km-open="decoder" role="button" tabindex="0" aria-label="Action. Show how the kinematic decoder is trained."
+                   data-tip-title="Action <i>a</i><sup><i>e</i></sup><sub><i>t</i></sub>"
+                   data-tip="The Wuji hand at its commanded configuration, making the intended contacts. The <em class='t-blue'>kinematic decoder</em> produced it from the latent intent.">
+                  <image href="assets/images/method/real_hand.webp" x="1546.4" y="835.5" width="1363.6" height="930.3"/>
+                  <path class="km-real-hit" d="M2875,842h35v21h-35zM2836,863h74v21h-74zM2672,884h50v21h-50zM2799,884h111v21h-111zM2610,905h138v21h-138zM2771,905h139v21h-139zM2558,926h352v21h-352zM2513,948h397v21h-397zM2472,969h438v21h-438zM1886,990h52v21h-52zM2436,990h474v21h-474zM1848,1011h114v21h-114zM2402,1011h508v21h-508zM1755,1032h248v21h-248zM2372,1032h538v21h-538zM1746,1054h285v21h-285zM2358,1054h552v21h-552zM1749,1075h297v21h-297zM2355,1075h555v21h-555zM1757,1096h308v21h-308zM2352,1096h558v21h-558zM1769,1117h314v21h-314zM2348,1117h562v21h-562zM1793,1138h302v21h-302zM2131,1138h27v21h-27zM2318,1138h592v21h-592zM1777,1160h108v21h-108zM1904,1160h297v21h-297zM2260,1160h650v21h-650zM1758,1181h127v21h-127zM2099,1181h811v21h-811zM1722,1202h165v21h-165zM2136,1202h774v21h-774zM1702,1223h239v21h-239zM2096,1223h814v21h-814zM1686,1245h256v21h-256zM2096,1245h814v21h-814zM1672,1266h270v21h-270zM2096,1266h814v21h-814zM1657,1287h285v21h-285zM2096,1287h814v21h-814zM1639,1308h303v21h-303zM2096,1308h814v21h-814zM1622,1329h320v21h-320zM2096,1329h798v21h-798zM1608,1351h333v21h-333zM2096,1351h797v21h-797zM1593,1372h294v21h-294zM2152,1372h747v21h-747zM1583,1393h298v21h-298zM2158,1393h745v21h-745zM1575,1414h245v21h-245zM1836,1414h39v21h-39zM2165,1414h741v21h-741zM1565,1435h239v21h-239zM2169,1435h741v21h-741zM1554,1457h244v21h-244zM2169,1457h736v21h-736zM1551,1478h244v21h-244zM2171,1478h732v21h-732zM1549,1499h242v21h-242zM2172,1499h726v21h-726zM1552,1520h236v21h-236zM2178,1520h14v21h-14zM2224,1520h667v21h-667zM1558,1542h226v21h-226zM2222,1542h661v21h-661zM1565,1563h220v21h-220zM2231,1563h20v21h-20zM2268,1563h605v21h-605zM1569,1584h215v21h-215zM2266,1584h523v21h-523zM1574,1605h192v21h-192zM2277,1605h511v21h-511zM1583,1626h171v21h-171zM2290,1626h498v21h-498zM1596,1648h153v21h-153zM2295,1648h494v21h-494zM1616,1669h133v21h-133zM2295,1669h492v21h-492zM1633,1690h117v21h-117zM2295,1690h347v21h-347zM2657,1690h129v21h-129zM1671,1711h79v21h-79zM2304,1711h124v21h-124zM2671,1711h108v21h-108zM1680,1732h70v21h-70zM2328,1732h83v21h-83zM1705,1754h27v21h-27z"/>
+                </g>
+                <g class="km-real-arrow" data-km="dec" data-km-open="decoder" role="button" tabindex="0" aria-label="Kinematic decoder. Show how it is trained."
+                   data-tip-title="Kinematic decoder <i>g</i><sup><i>e</i></sup>"
+                   data-tip="Turns the latent intent into the Wuji hand's next configuration <i>a</i><sup><i>e</i></sup><sub><i>t</i></sub>, learned from its kinematic model alone. Click to see how it is trained.">
+                  <path class="km-real-hit" d="M2430,792 C2444,935 2330,1180 2242.6,1297"/>
+                  <path class="km-real-arrow-line" d="M2430,792 C2444,935 2330,1180 2242.6,1297"/>
+                  <path class="km-real-arrow-head" d="M2208,1346 L2295,1309.4 L2213.2,1251.8 Z"/>
+                </g>
+                <g class="km-real-contacts" data-km="z contact pi" data-km-open="intent" role="button" tabindex="0" aria-label="Interaction intent. Show how the latent intent is formed."
+                   data-tip-title="Interaction intent"
+                   data-tip="Where the hand should touch the bottle, not which fingers should do it. The <em class='t-green'>interaction policy</em> predicts it as a latent intent <i>z</i><sub><i>t</i></sub>. Click to see how it is formed.">
+                  <circle class="km-real-glow" cx="2040" cy="1134" r="118" style="--n:0"/>
+                  <circle class="km-real-glow" cx="1796" cy="1639" r="118" style="--n:1"/>
+                  <circle class="km-real-glow" cx="2314" cy="1645" r="118" style="--n:2"/>
+                  <circle class="km-real-ring" cx="2040" cy="1134" r="62" style="--n:0"/>
+                  <circle class="km-real-ring" cx="1796" cy="1639" r="62" style="--n:1"/>
+                  <circle class="km-real-ring" cx="2314" cy="1645" r="62" style="--n:2"/>
+                </g>
+                <g class="km-real-anchors" aria-hidden="true">
+                  <circle data-node="rdec" cx="2404" cy="970" r=".5"/>
+                  <circle data-node="rpi" cx="2314" cy="1645" r=".5"/>
+                </g>
+              </svg>
+            </div>
+
+            <div class="km-zone km-zone-spec" data-km="dec state act qinit qgoal synth proj" tabindex="0" data-tip-title="Embodiment-specific" data-tip="The robot state and kinematic decoder determine how this embodiment realizes the intent. The blue overlays show its configuration and motion."><span>Embodiment-specific</span></div>
+            <div class="km-zone km-zone-agn" data-km="pi obs z zprev contact srcdemo" tabindex="0" data-tip-title="Embodiment-agnostic" data-tip="The interaction policy predicts intent from the object observation and previous latent intent. The green contacts specify the interaction shared across embodiments."><span>Embodiment-agnostic</span></div>
+
+            <span class="km-hint km-hint-blue" data-hint-for="decoder" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m4 2 2 13 3-4 4 5 3-2-4-5 5-1Z"/></svg><span class="km-hint-text">Click to try</span></span>
+            <span class="km-hint km-hint-green" data-hint-for="intent" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m4 2 2 13 3-4 4 5 3-2-4-5 5-1Z"/></svg><span class="km-hint-text">Click to try</span></span>
+            <span class="km-hint km-hint-green" data-hint-for="policy" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m4 2 2 13 3-4 4 5 3-2-4-5 5-1Z"/></svg><span class="km-hint-text">Click to try</span></span>
+
+            <div class="km-end km-end-obs" data-km="obs"
+                 data-tip-title="Observation <i>o</i><sub><i>t</i></sub>"
+                 data-tip="An object-only point cloud from external cameras. The robot itself is excluded.">
+              <img data-node="obs" src="assets/images/method/obs_bottle.webp" width="297" height="642" alt="" decoding="async">
+              <span class="km-label"><span class="km-m">o<sub>t</sub></span>Observation</span>
+            </div>
+
+            <button type="button" class="km-module km-module-pi" data-node="pi" data-km="pi" data-km-rel="srcdemo" data-panel="policy" aria-expanded="false" aria-controls="km-panel-policy"
+                    data-tip-title="Interaction policy <i>&pi;</i>"
+                    data-tip="Predicts the next latent intent from the observation and the previous latent intent. Trained only on <em class='t-gray'>source demonstrations</em> and reused unchanged on every target embodiment.">
+              <span class="km-module-name">Interaction policy</span>
+              <span class="km-module-sym km-m">&pi;</span>
+              <span class="km-module-more"><span class="km-more-closed">How it's trained</span><span class="km-more-open">Hide details</span><i></i></span>
+            </button>
+
+            <div class="km-sub km-sub-zprev" data-km="zprev" tabindex="0"
+                 data-tip-title="Previous latent intent <i>z</i><sub><i>t</i>&minus;1</sub>"
+                 data-tip="The latent intent predicted at the previous step. It replaces the policy's usual proprioceptive input, so the policy never sees any embodiment's joint state.">
+              <span class="km-latent km-latent-prev" data-node="zprev"></span>
+              <span class="km-label"><span class="km-m">z<sub>t&minus;1</sub></span><span>Previous<br>latent intent</span></span>
+            </div>
+
+            <button type="button" class="km-node-z" data-node="z" data-km="z" aria-expanded="false" aria-controls="km-intent"
+                 data-tip-title="Latent intent <i>z</i><sub><i>t</i></sub>"
+                 data-tip="A fixed-dimensional encoding of the intended contacts. It is the only signal passed from the <em class='t-green'>interaction policy</em> to the <em class='t-blue'>kinematic decoder</em>. Click to see how it is formed.">
+              <span class="km-z-label">Latent intent <span class="km-m">z<sub>t</sub></span></span>
+            </button>
+
+            <button type="button" class="km-module km-module-dec" data-node="dec" data-km="dec" data-km-rel="synth" data-panel="decoder" aria-expanded="false" aria-controls="km-panel-decoder"
+                    data-tip-title="Kinematic decoder <i>g</i><sup><i>e</i></sup>"
+                    data-tip="Maps the latent intent and the current configuration of embodiment <i>e</i> to its commanded next configuration. Trained on <em class='t-blue'>synthetic data</em> from kinematic models alone, with no task demonstrations.">
+              <span class="km-module-name">Kinematic decoder</span>
+              <span class="km-module-sym km-m">g<sup>e</sup></span>
+              <span class="km-module-more"><span class="km-more-closed">How it's trained</span><span class="km-more-open">Hide details</span><i></i></span>
+            </button>
+
+            <div class="km-sub km-sub-state" data-km="state" data-km-rel="qinit"
+                 data-tip-title="Robot state <i>q</i><sup><i>e</i></sup><sub><i>t</i></sub>"
+                 data-tip="The current configuration of embodiment <i>e</i>. It plays the role of <em class='t-blue'><i>q</i><sub class='up'>init</sub></em> in decoder training.">
+              <img data-node="state" src="assets/images/method/robot_state.webp" width="692" height="410" alt="" decoding="async">
+              <span class="km-label"><span class="km-m">q<span class="km-ss"><sup>e</sup><sub>t</sub></span></span><span>Robot state</span></span>
+            </div>
+
+            <div class="km-end km-end-act" data-km="act" data-km-rel="qgoal"
+                 data-tip-title="Action <i>a</i><sup><i>e</i></sup><sub><i>t</i></sub>"
+                 data-tip="The commanded next configuration <i>q</i><sup><i>e</i></sup><sub><i>t</i>+1</sub>, which realizes the intended contacts. It plays the role of <em class='t-blue'><i>q</i><sub class='up'>goal</sub></em> in decoder training.">
+              <img data-node="act" src="assets/images/method/action.webp" width="594" height="696" alt="" decoding="async">
+              <span class="km-label"><span class="km-m">a<span class="km-ss"><sup>e</sup><sub>t</sub></span></span>Action</span>
+            </div>
+
+            <span class="km-intent-arrow km-intent-arrow-in" aria-hidden="true"></span>
+            <span class="km-intent-arrow km-intent-arrow-out" aria-hidden="true"></span>
+            <section class="km-intent" id="km-intent" aria-labelledby="km-intent-title" inert>
+              <header class="km-intent-head">
+                <div>
+                  <p class="km-kicker" id="km-intent-title">Interaction intent</p>
+                  <p class="km-intent-sub">How to approach and contact an object, without specifying which fingers or tools to use.</p>
+                </div>
+                <button type="button" class="km-close" data-intent-close aria-label="Collapse interaction intent"><i></i></button>
+              </header>
+              <!-- The grasp and the contact set share one frame (y 45-420), so the bottle sits at the same
+                   size and height in both and every contact lands where the Barrett touches it. -->
+              <div class="km-intent-body km-graph" data-edges="igrasp:r>ic:l|n; ic:r>ipsi:l|g; ipsi:r>iz:l|g">
+                <svg class="km-wires" aria-hidden="true"></svg>
+                <figure class="km-i-item km-i-grasp" data-km="srcdemo"
+                        data-tip-title="Source demonstration"
+                        data-tip="A Barrett hand touches the bottle at three places. The interaction intent keeps only these contacts, not the fingers that make them, so the Wuji hand can realize the same intent.">
+                  <div class="km-i-img" data-node="igrasp"><svg class="km-scene" viewBox="100 45 220 375" aria-hidden="true"><image href="assets/images/method/intent_source.webp" x="0" y="0" width="414" height="426"/></svg></div>
+                  <figcaption>Source<br>demonstration</figcaption>
+                </figure>
+                <figure class="km-i-item km-i-c" data-km="contact"
+                        data-tip-title="Interaction intent <i>c</i><sub><i>t</i></sub>"
+                        data-tip="Contact locations on the object and the surface normal at each. It specifies the interaction without committing to any joint, link, fingertip, or end-effector.">
+                  <div class="km-i-img" data-node="ic"><svg class="km-scene" viewBox="136 45 146 375" aria-hidden="true"><image href="assets/images/method/intent_bottle.webp" x="87.5" y="136" width="242" height="290"/><g class="km-contacts"><g class="km-contact"><line x1="167.5" y1="257" x2="188.5" y2="257" style="stroke-width:6"/><polygon points="202.5,257 187.5,248 187.5,266"/><circle cx="153.5" cy="257" r="12"/></g><g class="km-contact"><line x1="248.5" y1="251" x2="227.5" y2="251" style="stroke-width:6"/><polygon points="213.5,251 228.5,242 228.5,260"/><circle cx="262.5" cy="251" r="12"/></g><g class="km-contact"><line x1="211.5" y1="187" x2="211.5" y2="208" style="stroke-width:6"/><polygon points="211.5,222 202.5,207 220.5,207"/><circle cx="211.5" cy="173" r="12"/></g></g></svg></div>
+                  <figcaption><span class="km-m km-c">c<sub>t</sub></span><br>points and normals</figcaption>
+                </figure>
+                <figure class="km-i-item km-i-psi" data-km="psi" data-km-rel="dec"
+                        data-tip-title="Intent encoder <i>&psi;</i>"
+                        data-tip="A permutation-invariant set encoder, trained together with the <em class='t-blue'>kinematic decoders</em>. It maps the unordered, variable-size contact set to a fixed-dimensional vector.">
+                  <figcaption>Intent encoder</figcaption>
+                  <span class="km-box km-box-shared km-m" data-node="ipsi">&psi;</span>
+                </figure>
+                <figure class="km-i-item km-i-z" data-km="z" data-km-rel="pi dec"
+                        data-tip-title="Latent intent <i>z</i><sub><i>t</i></sub>"
+                        data-tip="A point in a latent space shared by all embodiments. The <em class='t-green'>interaction policy</em> predicts it, and each <em class='t-blue'>kinematic decoder</em> realizes it.">
+                  <span class="km-latent" data-node="iz"></span>
+                  <figcaption><span class="km-m km-z">z<sub>t</sub></span><br>shared<br>latent space</figcaption>
+                </figure>
+              </div>
+            </section>
+          </div>
+
+          <!-- Embodiment-agnostic learning: opens downward from the interaction policy -->
+          <div class="km-drawer km-drawer-down" id="km-panel-policy" inert>
+            <div class="km-drawer-inner"><div class="km-drawer-pad">
+              <section class="km-panel km-panel-green" aria-labelledby="km-policy-title">
+                <header class="km-panel-head">
+                  <div>
+                    <p class="km-kicker">Embodiment-agnostic learning</p>
+                    <h3 id="km-policy-title">Interaction prediction, learned from source demonstrations</h3>
+                  </div>
+                  <button type="button" class="km-close" data-panel="policy" aria-label="Collapse interaction prediction details"><i></i></button>
+                </header>
+                <div class="km-panel-body">
+                  <div class="km-block" data-km-group="demo" style="--i:1">
+                    <p class="km-block-title"><svg class="km-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg>Demonstration preprocessing</p>
+                    <div class="km-demo km-graph" data-edges="dsrc:r>dc:l|n; dc:r>dpsi:l|g; dpsi:r>dz:l|g">
+                      <svg class="km-wires" aria-hidden="true"></svg>
+                      <figure class="km-demo-item" data-km="srcdemo"
+                              data-tip-title="Source demonstration"
+                              data-tip="Task demonstrations come only from the source embodiment; the target embodiment provides no task data. Contacts are extracted from the source configurations <i>q</i><sup class='up'>src</sup><sub><i>t</i></sub>.">
+                        <div class="km-demo-img" data-node="dsrc"><img src="assets/images/method/demo_robotiq.webp" width="683" height="720" alt="" loading="lazy" decoding="async"></div>
+                        <figcaption><span class="km-m">q<span class="km-ss"><sup class="km-up">src</sup><sub>t</sub></span></span></figcaption>
+                      </figure>
+                      <span class="km-demo-link">Contact extraction</span>
+                      <figure class="km-demo-item" data-km="contact"
+                              data-tip-title="Interaction intent <i>c</i><sub><i>t</i></sub>"
+                              data-tip="Points and outward normals on the source embodiment's surface, selected once per demonstration by their distance and normal alignment to the object. Forward kinematics tracks them through every frame, including frames without contact.">
+                        <div class="km-demo-img" data-node="dc"><svg class="km-scene" viewBox="903.1 323.7 55.1 79.7" aria-hidden="true"><image href="assets/images/method/bottle_contacts.webp" x="909.2" y="335.2" width="42.3" height="66.8"/><g class="km-contacts"><g class="km-contact"><line x1="951.2" y1="361.9" x2="940.7" y2="363.3"/><polygon points="935.4,364.1 941.1,359.7 942,366.8"/><circle cx="951.2" cy="361.9" r="5.4"/></g><g class="km-contact"><line x1="930.8" y1="330.6" x2="930.9" y2="341.2"/><polygon points="930.9,346.6 927.3,340.4 934.5,340.4"/><circle cx="930.8" cy="330.6" r="5.4"/></g><g class="km-contact"><line x1="910" y1="368.2" x2="920.5" y2="367.6"/><polygon points="925.9,367.3 919.9,371.2 919.5,364"/><circle cx="910" cy="368.2" r="5.4"/></g></g></svg></div>
+                        <figcaption><span class="km-m km-c">c<sub>t</sub></span></figcaption>
+                      </figure>
+                      <figure class="km-demo-item" data-km="psi" data-km-rel="dec"
+                              data-tip-title="Frozen intent encoder <i>&psi;</i>"
+                              data-tip="The intent encoder trained together with the <em class='t-blue'>kinematic decoders</em>, reused here without updates. It maps each <i>c</i><sub><i>t</i></sub> into the latent space the decoders were trained on.">
+                        <span class="km-box km-box-shared km-m" data-node="dpsi">&psi;<svg class="km-lock" viewBox="20 11 56 74" aria-hidden="true"><path d="M50 69.2 50 74.5 46 74.5 46 69.2C43.7 68.4 42 66.2 42 63.5 42 60.2 44.7 57.5 48 57.5 51.3 57.5 54 60.2 54 63.5 54 66.1 52.3 68.3 50 69.2ZM33 32.5C33 24.2 39.7 17.5 48 17.5 56.3 17.5 63 24.2 63 32.5L63 43.6 48 42.5 33 43.6 33 32.5ZM69 44 69 32.5C69 20.9 59.6 11.5 48 11.5 36.4 11.5 27 20.9 27 32.5L27 44 20 44.5 20 82.5 48 84.5 76 82.5 76 44.5 69 44Z"/></svg></span>
+                        <figcaption>frozen</figcaption>
+                      </figure>
+                      <figure class="km-demo-item" data-km="z" data-km-rel="pi"
+                              data-tip-title="Latent intent <i>z</i><sub><i>t</i></sub>"
+                              data-tip="The demonstration's interaction intent at step <i>t</i>, encoded as <i>z</i><sub><i>t</i></sub> = <i>&psi;</i>(<i>c</i><sub><i>t</i></sub>). It is the training target for the <em class='t-green'>interaction policy</em>.">
+                        <span class="km-latent" data-node="dz"></span>
+                        <figcaption><span class="km-m km-z">z<sub>t</sub></span></figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="km-handoff" aria-hidden="true" style="--i:2"><i></i></div>
+                  <div class="km-block" data-km-group="train-pi" style="--i:3">
+                    <p class="km-block-title"><svg class="km-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="4" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="12" cy="9" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 6.8l4 1.6M5.6 7.4l4.8 6.2M5.6 16.6l4.8-6.2M6 17.2l4-1.6M14 9.6l4 1.6M14 14.4l4-1.6"/></svg>Model training</p>
+                    <div class="km-train-pi km-graph" data-edges="pobs:r>ppi:l~merge|n; pzprev:r>ppi:l~merge|n; ppi:r>pz:l|g">
+                      <svg class="km-wires" aria-hidden="true"></svg>
+                      <div class="km-pin">
+                        <span class="km-pin-row" data-km="obs"><span class="km-m">o<sub>t</sub></span><img data-node="pobs" src="assets/images/method/obs_bottle.webp" width="297" height="642" alt="" loading="lazy" decoding="async"></span>
+                        <span class="km-pin-row" data-km="zprev"><span class="km-m km-zp">z<sub>t&minus;1</sub></span><span class="km-latent km-latent-prev" data-node="pzprev"></span></span>
+                      </div>
+                      <span class="km-box km-box-pi km-m" data-node="ppi" data-km="pi"
+                            data-tip-title="Interaction policy <i>&pi;</i>"
+                            data-tip="An off-the-shelf imitation learner (iDP3 in our experiments), trained with its native loss. Only two things change: it predicts latent intents, and the previous latent intent replaces its proprioceptive input.">&pi;</span>
+                      <span class="km-tz" data-km="z"><span class="km-latent" data-node="pz"></span><span class="km-m km-z">z<sub>t</sub></span></span>
+                    </div>
+                    <p class="km-ots">Off-the-shelf imitation learning</p>
+                  </div>
+                </div>
+                <p class="km-caption" style="--i:4"><b class="km-lead-green">Embodiment-agnostic interaction prediction.</b> An <span class="km-term km-term-green" tabindex="0" data-km-link="pi">interaction policy</span> predicts the next latent intent from the <span class="km-term km-term-gray" tabindex="0" data-km-link="obs">scene observation</span> and the <span class="km-term km-term-green" tabindex="0" data-km-link="zprev">previous latent intent</span>. It learns from <span class="km-term km-term-gray" tabindex="0" data-km-link="srcdemo contact">source demonstrations</span> preprocessed into the shared latent space and is reused across target embodiments. Training the policy thus reduces to standard imitation learning in the latent space, so an off-the-shelf imitation learner can be used with its architecture untouched.</p>
+              </section>
+            </div></div>
+          </div>
         </figure>
-        <p>
-          At inference, KITE operates as a standard visuomotor policy. Deploying to a new robot requires only training a new action decoder from its URDF and plugging it in.
-        </p>
-      </div>
 
-      <div class="tagline" id="real-experiment">Real-World Experiments</div>
-      <div class="section">
-        <p>
-          We deploy KITE on a <b>WujiHand</b> mounted on a <b>Tianji-Marvin</b> arm in the real world. Every policy is trained in matched simulation and run on hardware with no task demonstrations on the target embodiment and no real-world fine-tuning. KITE succeeds in <b>7&ndash;8 of 10 trials</b> on all three tasks, confirming zero-shot transfer under real perception and physics. For keyboard pressing and bottle pumping, the source is a <b>human hand</b>, showing that KITE extends to human-to-robot transfer.
-        </p>
+        <p>At deployment, the <span class="km-term km-term-green" tabindex="0" data-km-link="pi">interaction policy</span> predicts the next latent intent from <span class="km-term km-term-gray" tabindex="0" data-km-link="obs">live observations</span>, and the target's <span class="km-term km-term-blue" tabindex="0" data-km-link="dec">kinematic decoder</span> converts it into a <span class="km-term km-term-blue" tabindex="0" data-km-link="act">motor command</span>. For an embodiment outside the pretrained set, we add its <span class="km-term km-term-blue" tabindex="0" data-km-link="proj" data-km-open="decoder">input and output projectors</span> and fine-tune the decoder bank using synthetic kinematic data from the existing and new embodiments. The intent encoder stays fixed, so existing interaction policies are reused unchanged.</p>
+      </section>
 
-        <article class="task-block">
-          <h2>Cube Picking</h2>
-          <p class="figure-caption">
-            Robotiq &rarr; Wuji reaches 7/10 successes on physical hardware.
-          </p>
-          <div class="experiment-video-grid real-grid" aria-label="Real-world Cube Picking videos">
+      <h2 class="tagline" id="sim-experiment">Simulated Experiments</h2>
+      <section class="section" aria-labelledby="sim-experiment">
+        <p>We evaluate four tasks across six robot embodiments: Robotiq, Barrett, Allegro, Wuji, XHand, and Robotiq+Stick. The intent encoder and decoder bank are pretrained on the kinematic models of all involved embodiments, then frozen and reused across tasks. Each task has its own interaction policy, trained only on source demonstrations.</p>
+        <p>KITE achieves an average success rate of <b>86.4%</b> across 12 task&ndash;target settings. Each target is evaluated on 100 held-out episodes per seed, with results averaged across three random seeds.</p>
+        <article class="task-block" id="sim-objects-placing">
+          <h3>Objects Placing</h3>
+          <p class="figure-caption">Robotiq demonstrations transfer to Barrett, Allegro, and Wuji. The robot picks up an object with randomized position and orientation and places it inside a nearby bin. Training and testing use the same six objects.</p>
+          <div class="experiment-video-grid sim-grid" aria-label="Objects Placing videos">
             <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Robotiq</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_demo_real.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: Robotiq</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/objects_placing_robotiq.mp4?v=speed-2" poster="assets/images/posters/objects_placing_robotiq.jpg" preload="none" muted playsinline loop aria-label="Source: Robotiq"></video>
+              </div>
             </figure>
             <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/cube_pick_wuji_real.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Barrett</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/objects_placing_barrett.mp4?v=speed-2" poster="assets/images/posters/objects_placing_barrett.jpg" preload="none" muted playsinline loop aria-label="Target: Barrett"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Allegro</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/objects_placing_allegro.mp4?v=speed-2" poster="assets/images/posters/objects_placing_allegro.jpg" preload="none" muted playsinline loop aria-label="Target: Allegro"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Wuji</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/objects_placing_wuji.mp4?v=speed-2" poster="assets/images/posters/objects_placing_wuji.jpg" preload="none" muted playsinline loop aria-label="Target: Wuji"></video>
+              </div>
             </figure>
           </div>
         </article>
-
-        <article class="task-block">
-          <h2>Keyboard Pressing</h2>
-          <p class="figure-caption">
-            Human Hand &rarr; Wuji reaches 8/10 successes on physical hardware.
-          </p>
-          <div class="experiment-video-grid real-grid" aria-label="Real-world Keyboard Pressing videos">
-            <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Human Hand</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_demo_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/keyboard_press_wuji_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-          </div>
-        </article>
-
-        <article class="task-block">
-          <h2>Bottle Pumping</h2>
-          <p class="figure-caption">
-            Human Hand &rarr; Wuji reaches 7/10 successes on physical hardware.
-          </p>
-          <div class="experiment-video-grid real-grid" aria-label="Real-world Bottle Pumping videos">
-            <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Human Hand</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_demo_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/real/pumpbottle_use_wuji_real.m4v" autoplay muted playsinline loop></video>
-            </figure>
-          </div>
-        </article>
-      </div>
-
-      <div class="tagline" id="sim-experiment">Simulated Experiments</div>
-      <div class="section">
-        <p>
-          We evaluate zero-shot cross-embodiment transfer across three tasks and five embodiments in MuJoCo: a parallel gripper, three dexterous hands, and a composite of two robots. With no task demonstrations on the target embodiments, KITE achieves the highest success rate in every transfer setting.
-        </p>
-
-        <article class="task-block">
-          <h2>Cube Picking</h2>
-          <p class="figure-caption">
-            A Robotiq source demonstration transfers to three dexterous hands, testing simple-gripper to dexterous-hand zero-shot manipulation.
-          </p>
-          <div class="experiment-video-grid sim-grid" aria-label="Cube Picking videos">
-            <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Robotiq</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_demo.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Barrett</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_barrett.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Allegro</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_allegro_right.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/cube_pick_marvin_wuji.mp4" autoplay muted playsinline loop></video>
-            </figure>
-          </div>
-        </article>
-
-        <article class="task-block">
-          <h2>Keyboard Pressing</h2>
-          <p class="figure-caption">
-            Wuji demonstrations press a target key sequence and transfer to dexterous and composite target embodiments through the shared interaction-intent interface.
-          </p>
+        <article class="task-block" id="sim-keyboard-pressing">
+          <h3>Keyboard Pressing</h3>
+          <p class="figure-caption">Wuji demonstrations transfer pressing three target keys to Barrett, Allegro, and Robotiq+Stick. Success requires depressing every target key past 50% of its travel, testing spatial precision.</p>
           <div class="experiment-video-grid sim-grid" aria-label="Keyboard Pressing videos">
             <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_demo.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: Wuji</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.5" src="assets/videos/v4/keyboard_pressing_wuji.mp4?v=speed-2" poster="assets/images/posters/keyboard_pressing_wuji.jpg" preload="none" muted playsinline loop aria-label="Source: Wuji"></video>
+              </div>
             </figure>
             <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Barrett</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_barrett.mp4" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Barrett</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.5" src="assets/videos/v4/keyboard_pressing_barrett.mp4?v=speed-2" poster="assets/images/posters/keyboard_pressing_barrett.jpg" preload="none" muted playsinline loop aria-label="Target: Barrett"></video>
+              </div>
             </figure>
             <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Allegro</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_allegro_right.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Allegro</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.5" src="assets/videos/v4/keyboard_pressing_allegro.mp4?v=speed-2" poster="assets/images/posters/keyboard_pressing_allegro.jpg" preload="none" muted playsinline loop aria-label="Target: Allegro"></video>
+              </div>
             </figure>
             <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Robotiq+Stick</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/keyboard_press_robotiq_gripper_stick_armless.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Robotiq+Stick</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.5" src="assets/videos/v4/keyboard_pressing_robotiq_stick.mp4?v=speed-2" poster="assets/images/posters/keyboard_pressing_robotiq_stick.jpg" preload="none" muted playsinline loop aria-label="Target: Robotiq+Stick"></video>
+              </div>
             </figure>
           </div>
         </article>
-
-        <article class="task-block">
-          <h2>Bottle Pumping</h2>
-          <p class="figure-caption">
-            The source policy transfers a multi-stage interaction that must both lift the bottle and depress the pump, requiring task-relevant contacts to change over time.
-          </p>
-          <div class="experiment-video-grid sim-grid" aria-label="Bottle Pumping videos">
+        <article class="task-block" id="sim-bottles-pumping">
+          <h3>Bottles Pumping</h3>
+          <p class="figure-caption">Wuji demonstrations transfer to Barrett, Allegro, and Robotiq+Stick across three pump bottles. Success requires lifting the bottle and depressing its pump by at least 1 cm each. Robotiq+Stick distributes supporting and pressing contacts across a gripper and a separately actuated stick.</p>
+          <div class="experiment-video-grid sim-grid" aria-label="Bottles Pumping videos">
             <figure class="experiment-video-card source-video-card">
-              <span class="video-label video-label-source">Source: Wuji</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_demo.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: Wuji</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/bottles_pumping_wuji.mp4?v=speed-2" poster="assets/images/posters/bottles_pumping_wuji.jpg" preload="none" muted playsinline loop aria-label="Source: Wuji"></video>
+              </div>
             </figure>
             <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Barrett</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_barrett.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Barrett</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/bottles_pumping_barrett.mp4?v=speed-2" poster="assets/images/posters/bottles_pumping_barrett.jpg" preload="none" muted playsinline loop aria-label="Target: Barrett"></video>
+              </div>
             </figure>
             <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Allegro</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_allegro_right.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Allegro</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/bottles_pumping_allegro.mp4?v=speed-2" poster="assets/images/posters/bottles_pumping_allegro.jpg" preload="none" muted playsinline loop aria-label="Target: Allegro"></video>
+              </div>
             </figure>
             <figure class="experiment-video-card target-video-card">
-              <span class="video-label video-label-target">Target: Robotiq+Stick</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_robotiq_gripper_stick_armless.m4v" autoplay muted playsinline loop></video>
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Robotiq+Stick</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/bottles_pumping_robotiq_stick.mp4?v=speed-2" poster="assets/images/posters/bottles_pumping_robotiq_stick.jpg" preload="none" muted playsinline loop aria-label="Target: Robotiq+Stick"></video>
+              </div>
             </figure>
           </div>
         </article>
-      </div>
+        <article class="task-block" id="sim-nut-rotating">
+          <h3>Nut Rotating</h3>
+          <p class="figure-caption">XHand demonstrations transfer sustained contact coordination to Barrett, Allegro, and Wuji. The nut rotates about a fixed stud, and all hand bases remain fixed. Each episode is scored by the target's net rotation divided by the source demonstration's net rotation, clipped to [0, 1].</p>
+          <div class="experiment-video-grid sim-grid" aria-label="Nut Rotating videos">
+            <figure class="experiment-video-card source-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: XHand</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/nut_rotating_xhand.mp4?v=speed-2" poster="assets/images/posters/nut_rotating_xhand.jpg" preload="none" muted playsinline loop aria-label="Source: XHand"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Barrett</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/nut_rotating_barrett.mp4?v=speed-2" poster="assets/images/posters/nut_rotating_barrett.jpg" preload="none" muted playsinline loop aria-label="Target: Barrett"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Allegro</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/nut_rotating_allegro.mp4?v=speed-2" poster="assets/images/posters/nut_rotating_allegro.jpg" preload="none" muted playsinline loop aria-label="Target: Allegro"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Wuji</span>
+                <video class="gallery-video experiment-video" data-playback-rate="1.25" src="assets/videos/v4/nut_rotating_wuji.mp4?v=speed-2" poster="assets/images/posters/nut_rotating_wuji.jpg" preload="none" muted playsinline loop aria-label="Target: Wuji"></video>
+              </div>
+            </figure>
+          </div>
+        </article>
 
-      <!-- ============================================================ -->
-      <!--  ANALYSIS SECTION                                            -->
-      <!-- ============================================================ -->
-      <div class="tagline" id="analysis">Analysis of KITE</div>
-      <div class="section">
-        <p>
-          We verify the necessity of the latent intent interface, confirm that kinematics-only supervision is sufficient for the action decoder, and characterize the decoder's robustness to initialization perturbations.
-        </p>
+      </section>
 
+      <h2 class="tagline" id="real-experiment">Real-World Experiments</h2>
+      <section class="section" aria-labelledby="real-experiment">
+        <p>We evaluate all four tasks on a <b>Wuji hand</b> mounted on a <b>Tianji Marvin arm</b>, using the same frozen kinematic decoder without target-task demonstrations or real-world fine-tuning. Objects placing transfers from Robotiq, nut rotating from XHand, and keyboard pressing and bottles pumping from <i>human</i> demonstrations. </p>
+        <p>At deployment, a calibrated ZED camera provides object point clouds filtered with SAM 2 segmentation masks. Each task is evaluated over 10 trials.</p>
+        <article class="task-block" id="real-objects-placing">
+          <h3>Objects Placing</h3>
+          <p class="figure-caption">Robotiq &rarr; Wuji succeeds in 8/10 trials, picking up an object and placing it inside a nearby bin.</p>
+          <div class="experiment-video-grid real-grid" aria-label="Objects Placing videos">
+            <figure class="experiment-video-card source-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: Robotiq</span>
+                <video class="gallery-video experiment-video" data-playback-rate="0.75" src="assets/videos/v4/objects_placing_robotiq.mp4?v=speed-2" poster="assets/images/posters/objects_placing_robotiq.jpg" preload="none" muted playsinline loop aria-label="Source: Robotiq"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Wuji</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/objects_placing_real.mp4?v=speed-2" poster="assets/images/posters/objects_placing_real.jpg?v=sdr-1" preload="none" muted playsinline loop aria-label="Target: Wuji"></video>
+                <span class="speed-badge" aria-label="3 times speed">3&times;</span>
+              </div>
+            </figure>
+          </div>
+        </article>
+        <article class="task-block" id="real-keyboard-pressing">
+          <h3>Keyboard Pressing</h3>
+          <p class="figure-caption">Human hand &rarr; Wuji succeeds in 8/10 trials. Success requires depressing all three target keys past 50% of their travel.</p>
+          <div class="experiment-video-grid real-grid" aria-label="Keyboard Pressing videos">
+            <figure class="experiment-video-card source-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: Human Hand</span>
+                <video class="gallery-video experiment-video" data-playback-rate="0.75" src="assets/videos/v4/keyboard_pressing_human.mp4?v=speed-2" poster="assets/images/posters/keyboard_pressing_human.jpg" preload="none" muted playsinline loop aria-label="Source: Human Hand"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Wuji</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/keyboard_pressing_real.mp4?v=speed-2" poster="assets/images/posters/keyboard_pressing_real.jpg" preload="none" muted playsinline loop aria-label="Target: Wuji"></video>
+                <span class="speed-badge" aria-label="3 times speed">3&times;</span>
+              </div>
+            </figure>
+          </div>
+        </article>
+        <article class="task-block" id="real-bottles-pumping">
+          <h3>Bottles Pumping</h3>
+          <p class="figure-caption">Human hand &rarr; Wuji succeeds in 6/10 trials, lifting the bottle and depressing its pump by at least 1 cm each.</p>
+          <div class="experiment-video-grid real-grid" aria-label="Bottles Pumping videos">
+            <figure class="experiment-video-card source-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: Human Hand</span>
+                <video class="gallery-video experiment-video" data-playback-rate="0.75" src="assets/videos/v4/bottles_pumping_human.mp4?v=speed-2" poster="assets/images/posters/bottles_pumping_human.jpg" preload="none" muted playsinline loop aria-label="Source: Human Hand"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Wuji</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/bottles_pumping_real.mp4?v=speed-2" poster="assets/images/posters/bottles_pumping_real.jpg" preload="none" muted playsinline loop aria-label="Target: Wuji"></video>
+                <span class="speed-badge" aria-label="3 times speed">3&times;</span>
+              </div>
+            </figure>
+          </div>
+        </article>
+        <article class="task-block" id="real-nut-rotating">
+          <h3>Nut Rotating</h3>
+          <p class="figure-caption">XHand &rarr; Wuji succeeds in 7/10 trials. Success requires rotating the nut by more than <span class="math-inline">&pi;</span> radians.</p>
+          <div class="experiment-video-grid real-grid" aria-label="Nut Rotating videos">
+            <figure class="experiment-video-card source-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-source">Source: XHand</span>
+                <video class="gallery-video experiment-video" data-playback-rate="0.5" src="assets/videos/v4/nut_rotating_xhand.mp4?v=speed-2" poster="assets/images/posters/nut_rotating_xhand.jpg" preload="none" muted playsinline loop aria-label="Source: XHand"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">Target: Wuji</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/nut_rotating_real.mp4?v=speed-2" poster="assets/images/posters/nut_rotating_real.jpg" preload="none" muted playsinline loop aria-label="Target: Wuji"></video>
+                <span class="speed-badge" aria-label="4 times speed">4&times;</span>
+              </div>
+            </figure>
+          </div>
+        </article>
+
+      </section>
+
+      <h2 class="tagline" id="analysis">Analysis of KITE</h2>
+      <section class="section" aria-labelledby="analysis">
+        <p>We examine how KITE extends to a new embodiment and how the latent intent interface and decoder supervision affect transfer. We also test sensitivity to the target's initial pose to understand the limits of kinematic decoding.</p>
         <div class="analysis-grid">
-
-          <!-- Card 1: Latent Intent Interface -->
-          <div class="analysis-card">
-            <div class="analysis-card-figure">
-              <img src="assets/images/analysis/latent_ablation.png" alt="Latent intent ablation bar chart">
-            </div>
-            <p class="analysis-card-text">
-              <b>Latent intent interface.</b> Removing the latent intent and letting the policy output raw contact sets drops average success rate by 12&ndash;24 points across tasks, with the gap widening on more contact-rich tasks.
-            </p>
-          </div>
-
-          <!-- Card 2: Kinematics-only Supervision -->
-          <div class="analysis-card">
-            <div class="analysis-card-figure">
-              <img src="assets/images/analysis/kinematics_sufficiency.png" alt="Effect of adding target-task demonstrations">
-            </div>
-            <p class="analysis-card-text">
-              <b>Kinematics-only supervision.</b> Adding up to 200 target-task demonstrations to the action decoder hardly improves success rate, confirming that the kinematics-only supervision is sufficient.
-            </p>
-          </div>
-
-          <!-- Card 3: Initialization Robustness -->
-          <div class="analysis-card">
-            <div class="analysis-card-table">
-              <table>
-                <thead><tr><th>Initialization</th><th>Succ.&thinsp;(%)</th></tr></thead>
+          <article class="analysis-card" id="analysis-new-robot">
+            <h3>Adding a new robot</h3>
+            <div class="analysis-visual analysis-card-table">
+              <p class="analysis-visual-meta" id="new-robot-caption">Objects placing success (%, mean &plusmn; SD; three seeds)</p>
+              <table aria-labelledby="new-robot-caption">
+                <thead><tr><th scope="col">Target</th><th scope="col">Before adding Wuji</th><th scope="col">After adding Wuji</th></tr></thead>
                 <tbody>
-                  <tr><td>Base</td><td>100</td></tr>
-                  <tr><td>5&thinsp;cm, 30&deg;</td><td>100</td></tr>
-                  <tr><td>20&thinsp;cm, 60&deg;</td><td>81</td></tr>
-                  <tr><td>Flipped 180&deg;</td><td>62</td></tr>
-                  <tr><td>30&thinsp;cm shift</td><td>37</td></tr>
+                  <tr><th scope="row">Barrett</th><td>74.7 &plusmn; 3.1</td><td>74.0 &plusmn; 2.6</td></tr>
+                  <tr><th scope="row">Allegro</th><td>84.0 &plusmn; 2.6</td><td>84.3 &plusmn; 2.1</td></tr>
+                  <tr><th scope="row">Wuji</th><td>N/A</td><td>80.0 &plusmn; 3.6</td></tr>
                 </tbody>
               </table>
+              <p class="table-note">N/A: no Wuji decoder.</p>
             </div>
-            <p class="analysis-card-text">
-              <b>Initialization robustness.</b> The action decoder handles moderate perturbations well and only degrades when initialization departs far from the local contact neighborhood.
-            </p>
-          </div>
-
+            <p class="analysis-card-text">We exclude Wuji from pretraining, then add its synthetic kinematic data and fine-tune the decoder bank for 50 epochs (10 hours on one RTX 5090), keeping the encoder and policy frozen. Wuji reaches 80.0% success, comparable to joint pretraining, while performance on existing embodiments remains similar.</p>
+          </article>
+          <article class="analysis-card" id="analysis-supervision">
+            <h3>Kinematics-only decoder supervision</h3>
+            <div class="analysis-visual">
+              <p class="analysis-visual-meta">Allegro bottles pumping</p>
+              <svg class="analysis-chart" viewBox="0 0 420 240" role="img" aria-labelledby="supervision-title supervision-desc"><title id="supervision-title">Kinematics-only decoder supervision</title><desc id="supervision-desc">Allegro bottles pumping success rates with 0, 10, 50, and 200 added target-task demonstrations: 86.3 ± 3.2, 84.7 ± 3.1, 87.0 ± 2.6, and 89.0 ± 2.6 percent. Error bars show sample standard deviation across three random seeds. Demonstration budgets are equally spaced categorical settings, as in the paper.</desc><text x="46.00" y="15.00" class="chart-axis-title" text-anchor="start">Success rate (%)</text><line x1="46.00" y1="184.00" x2="401.00" y2="184.00" class="chart-grid"/><text x="36.00" y="188.00" class="chart-tick" text-anchor="end">80</text><line x1="46.00" y1="146.00" x2="401.00" y2="146.00" class="chart-grid"/><text x="36.00" y="150.00" class="chart-tick" text-anchor="end">85</text><line x1="46.00" y1="108.00" x2="401.00" y2="108.00" class="chart-grid"/><text x="36.00" y="112.00" class="chart-tick" text-anchor="end">90</text><line x1="46.00" y1="70.00" x2="401.00" y2="70.00" class="chart-grid"/><text x="36.00" y="74.00" class="chart-tick" text-anchor="end">95</text><line x1="46.00" y1="32.00" x2="401.00" y2="32.00" class="chart-grid"/><text x="36.00" y="36.00" class="chart-tick" text-anchor="end">100</text><polyline class="chart-line" points="66,136.12 171,148.28 276,130.80 381,115.60"/><g data-mean="86.3" data-sd="3.2" data-demonstrations="0"><line x1="66.00" y1="160.44" x2="66.00" y2="111.80" class="chart-error"/><line x1="61.00" y1="160.44" x2="71.00" y2="160.44" class="chart-error"/><line x1="61.00" y1="111.80" x2="71.00" y2="111.80" class="chart-error"/><circle class="chart-point" cx="66" cy="136.12" r="4.5"/><text x="66.00" y="99.80" class="chart-value" text-anchor="middle">86.3</text><text x="66.00" y="207.00" class="chart-tick" text-anchor="middle">0</text></g><g data-mean="84.7" data-sd="3.1" data-demonstrations="10"><line x1="171.00" y1="171.84" x2="171.00" y2="124.72" class="chart-error"/><line x1="166.00" y1="171.84" x2="176.00" y2="171.84" class="chart-error"/><line x1="166.00" y1="124.72" x2="176.00" y2="124.72" class="chart-error"/><circle class="chart-point" cx="171" cy="148.28" r="4.5"/><text x="171.00" y="112.72" class="chart-value" text-anchor="middle">84.7</text><text x="171.00" y="207.00" class="chart-tick" text-anchor="middle">10</text></g><g data-mean="87.0" data-sd="2.6" data-demonstrations="50"><line x1="276.00" y1="150.56" x2="276.00" y2="111.04" class="chart-error"/><line x1="271.00" y1="150.56" x2="281.00" y2="150.56" class="chart-error"/><line x1="271.00" y1="111.04" x2="281.00" y2="111.04" class="chart-error"/><circle class="chart-point" cx="276" cy="130.80" r="4.5"/><text x="276.00" y="99.04" class="chart-value" text-anchor="middle">87.0</text><text x="276.00" y="207.00" class="chart-tick" text-anchor="middle">50</text></g><g data-mean="89.0" data-sd="2.6" data-demonstrations="200"><line x1="381.00" y1="135.36" x2="381.00" y2="95.84" class="chart-error"/><line x1="376.00" y1="135.36" x2="386.00" y2="135.36" class="chart-error"/><line x1="376.00" y1="95.84" x2="386.00" y2="95.84" class="chart-error"/><circle class="chart-point" cx="381" cy="115.60" r="4.5"/><text x="381.00" y="83.84" class="chart-value" text-anchor="middle">89.0</text><text x="381.00" y="207.00" class="chart-tick" text-anchor="middle">200</text></g><text x="224.00" y="233.00" class="chart-axis-title" text-anchor="middle">Added target-task demonstrations</text></svg>
+              <p class="table-note">Mean &plusmn; SD across three random seeds.</p>
+            </div>
+            <p class="analysis-card-text">Adding 10, 50, or 200 target-task demonstrations improves success by at most 2.7 percentage points in a separate Allegro bottles pumping diagnostic. The limited benefit supports learning target-side contact realization from kinematics alone in this setting.</p>
+          </article>
+          <article class="analysis-card" id="analysis-latent">
+            <h3>Latent intent interface</h3>
+            <div class="analysis-visual">
+              <div class="analysis-visual-meta chart-legend"><span><i class="legend-muted"></i>w/o Latent</span><span><i class="legend-kite"></i>KITE (Full)</span></div>
+              <svg class="analysis-chart" viewBox="0 0 420 240" role="img" aria-labelledby="latent-title latent-desc"><title id="latent-title">Latent intent interface</title><desc id="latent-desc">Task averages over three targets, without latent intent versus full KITE: objects placing 44.2 versus 81.2; keyboard pressing 62.8 versus 97.0; bottles pumping 56.4 versus 88.2; nut rotating 44.9 versus 79.1 percent.</desc><text x="46.00" y="15.00" class="chart-axis-title" text-anchor="start">Mean success rate (%)</text><line x1="46.00" y1="184.00" x2="401.00" y2="184.00" class="chart-grid"/><text x="36.00" y="188.00" class="chart-tick" text-anchor="end">0</text><line x1="46.00" y1="146.50" x2="401.00" y2="146.50" class="chart-grid"/><text x="36.00" y="150.50" class="chart-tick" text-anchor="end">25</text><line x1="46.00" y1="109.00" x2="401.00" y2="109.00" class="chart-grid"/><text x="36.00" y="113.00" class="chart-tick" text-anchor="end">50</text><line x1="46.00" y1="71.50" x2="401.00" y2="71.50" class="chart-grid"/><text x="36.00" y="75.50" class="chart-tick" text-anchor="end">75</text><line x1="46.00" y1="34.00" x2="401.00" y2="34.00" class="chart-grid"/><text x="36.00" y="38.00" class="chart-tick" text-anchor="end">100</text><rect class="chart-bar-muted" x="62" y="117.70" width="20" height="66.30" rx="2" data-mean="44.2"/><text x="72.00" y="109.70" class="chart-value-muted" text-anchor="middle">44.2</text><rect class="chart-bar" x="88" y="62.20" width="20" height="121.80" rx="2" data-mean="81.2"/><text x="98.00" y="54.20" class="chart-value" text-anchor="middle">81.2</text><text x="85.00" y="208.00" class="chart-tick" text-anchor="middle">Objects</text><text x="85.00" y="225.00" class="chart-tick" text-anchor="middle">Placing</text><rect class="chart-bar-muted" x="155" y="89.80" width="20" height="94.20" rx="2" data-mean="62.8"/><text x="165.00" y="81.80" class="chart-value-muted" text-anchor="middle">62.8</text><rect class="chart-bar" x="181" y="38.50" width="20" height="145.50" rx="2" data-mean="97.0"/><text x="191.00" y="30.50" class="chart-value" text-anchor="middle">97.0</text><text x="178.00" y="208.00" class="chart-tick" text-anchor="middle">Keyboard</text><text x="178.00" y="225.00" class="chart-tick" text-anchor="middle">Pressing</text><rect class="chart-bar-muted" x="248" y="99.40" width="20" height="84.60" rx="2" data-mean="56.4"/><text x="258.00" y="91.40" class="chart-value-muted" text-anchor="middle">56.4</text><rect class="chart-bar" x="274" y="51.70" width="20" height="132.30" rx="2" data-mean="88.2"/><text x="284.00" y="43.70" class="chart-value" text-anchor="middle">88.2</text><text x="271.00" y="208.00" class="chart-tick" text-anchor="middle">Bottles</text><text x="271.00" y="225.00" class="chart-tick" text-anchor="middle">Pumping</text><rect class="chart-bar-muted" x="341" y="116.65" width="20" height="67.35" rx="2" data-mean="44.9"/><text x="351.00" y="108.65" class="chart-value-muted" text-anchor="middle">44.9</text><rect class="chart-bar" x="367" y="65.35" width="20" height="118.65" rx="2" data-mean="79.1"/><text x="377.00" y="57.35" class="chart-value" text-anchor="middle">79.1</text><text x="364.00" y="208.00" class="chart-tick" text-anchor="middle">Nut</text><text x="364.00" y="225.00" class="chart-tick" text-anchor="middle">Rotating</text></svg>
+              <p class="table-note">Task averages over the three target embodiments.</p>
+            </div>
+            <p class="analysis-card-text">Predicting raw contact slots instead of latent intents reduces average success by over 30 percentage points on each of the first three tasks. The largest individual drop is on Wuji nut rotating, from 89.3% to 27.3%. The learned interface maps unordered, variable-size contact sets to a fixed-dimensional action space.</p>
+          </article>
+          <article class="analysis-card" id="analysis-initialization">
+            <h3>Initialization sensitivity</h3>
+            <div class="analysis-visual analysis-card-table">
+              <p class="analysis-visual-meta" id="initialization-caption">Oracle Intent on Wuji objects placing</p>
+              <table aria-labelledby="initialization-caption">
+                <thead><tr><th scope="col">Initial-pose perturbation</th><th scope="col">Success (%)</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Base (no perturbation)</th><td>85</td></tr>
+                  <tr><th scope="row">5 cm, 30&deg;</th><td>80</td></tr>
+                  <tr><th scope="row">20 cm, 60&deg;</th><td>78</td></tr>
+                  <tr><th scope="row">Flipped 180&deg;</th><td>66</td></tr>
+                  <tr><th scope="row">30 cm shift</th><td>57</td></tr>
+                </tbody>
+              </table>
+              <p class="table-note">The same source-intent sequences are replayed.</p>
+            </div>
+            <p class="analysis-card-text">Replaying the same source-intent sequences from different initial hand poses preserves success under modest perturbations, but performance drops with large shifts or a flipped hand. This is consistent with the decoder's local training construction, which does not guarantee intent realization from arbitrary initializations.</p>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <!-- ============================================================ -->
-      <!--  EXECUTION DIVERSITY                                         -->
-      <!-- ============================================================ -->
-      <div class="tagline" id="execution-diversity">Execution Diversity</div>
-      <div class="section">
-        <p>
-          The action decoder in KITE is able to discover diverse execution strategies for the same task on a specific robot, engaging different hand regions to achieve the desired contact in each case.
-        </p>
+      <h2 class="tagline" id="execution-diversity">Execution Diversity</h2>
+      <section class="section" aria-labelledby="execution-diversity">
+        <p>During objects placing, the Wuji decoder uses different finger combinations across objects, although all demonstrations come from the same Robotiq gripper. It realizes the interaction intents without a prescribed source-to-target part mapping.</p>
+        <div class="execution-image-grid" aria-label="Wuji finger combinations during objects placing">
+          <figure><img width="1308" height="1047" src="assets/images/analysis/execution_diversity_1.webp" alt="Wuji grasps a mustard bottle using its thumb and index finger." loading="lazy"><figcaption>Thumb and index finger</figcaption></figure>
+          <figure><img width="1308" height="1047" src="assets/images/analysis/execution_diversity_2.webp" alt="Wuji grasps a sugar box using its thumb and index finger." loading="lazy"><figcaption>Thumb and index finger</figcaption></figure>
+          <figure><img width="1308" height="1048" src="assets/images/analysis/execution_diversity_3.webp" alt="Wuji grasps a box using its thumb, index, and middle fingers." loading="lazy"><figcaption>Thumb, index, and middle fingers</figcaption></figure>
+        </div>
+      </section>
 
-        <article class="task-block">
-          <div class="experiment-video-grid triple-grid" aria-label="Execution diversity videos">
-            <figure class="experiment-video-card">
-              <span class="video-label video-label-target">Wuji &middot; Strategy 1</span>
-              <video class="gallery-video experiment-video" src="assets/videos/execution_diversity/diversity_1.mp4" data-speed="1.5" autoplay muted playsinline loop></video>
+      <h2 class="tagline" id="comparative-results">Comparative Results</h2>
+      <section class="section comparison-section" aria-labelledby="comparative-results">
+        <p>We compare <b>KITE (Oracle Intent)</b> with SPIDER to isolate kinematic decoding from interaction prediction. Both use source trajectories: Oracle Intent supplies the frozen decoder with intents encoded from source demonstrations, while SPIDER optimizes target motion using manually specified part correspondences. On bottles pumping, SPIDER loses contact while the kinematic decoder preserves the supporting and pressing interactions.</p>
+        <div class="task-block comparison-block" id="decoder-comparison">
+          <div class="experiment-video-grid sim-grid" aria-label="Bottles Pumping videos">
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">KITE (Oracle Intent) &middot; Barrett</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/oracle_intent_barrett.mp4" poster="assets/images/posters/oracle_intent_barrett.jpg" preload="none" muted playsinline loop aria-label="KITE (Oracle Intent) &middot; Barrett"></video>
+              </div>
             </figure>
-            <figure class="experiment-video-card">
-              <span class="video-label video-label-target">Wuji &middot; Strategy 2</span>
-              <video class="gallery-video experiment-video" src="assets/videos/execution_diversity/diversity_2.mp4" data-speed="1.5" autoplay muted playsinline loop></video>
+            <figure class="experiment-video-card baseline-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-baseline">SPIDER &middot; Barrett</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/spider_barrett.mp4" poster="assets/images/posters/spider_barrett.jpg" preload="none" muted playsinline loop aria-label="SPIDER &middot; Barrett"></video>
+                <span class="comparison-cue" data-cue-at="8" data-track="barrett" hidden>Pressing contact slips off the pump</span>
+                <svg class="comparison-evidence" viewBox="0 0 1920 1080" aria-hidden="true" hidden><rect/></svg>
+              </div>
             </figure>
-            <figure class="experiment-video-card">
-              <span class="video-label video-label-target">Wuji &middot; Strategy 3</span>
-              <video class="gallery-video experiment-video" src="assets/videos/execution_diversity/diversity_3.mp4" data-speed="1.5" autoplay muted playsinline loop></video>
+            <figure class="experiment-video-card target-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-target">KITE (Oracle Intent) &middot; Allegro</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/oracle_intent_allegro.mp4" poster="assets/images/posters/oracle_intent_allegro.jpg" preload="none" muted playsinline loop aria-label="KITE (Oracle Intent) &middot; Allegro"></video>
+              </div>
+            </figure>
+            <figure class="experiment-video-card baseline-video-card">
+              <div class="video-frame">
+                <span class="video-label video-label-baseline">SPIDER &middot; Allegro</span>
+                <video class="gallery-video experiment-video" src="assets/videos/v4/spider_allegro.mp4" poster="assets/images/posters/spider_allegro.jpg" preload="none" muted playsinline loop aria-label="SPIDER &middot; Allegro"></video>
+                <span class="comparison-cue" data-cue-at="9.5" data-track="allegro" hidden>Bottle tips over</span>
+                <svg class="comparison-evidence" viewBox="0 0 1920 1080" aria-hidden="true" hidden><rect/></svg>
+              </div>
             </figure>
           </div>
-        </article>
-      </div>
+        </div>
+      </section>
 
-      <!-- ============================================================ -->
-      <!--  COMPARATIVE RESULTS                                         -->
-      <!-- ============================================================ -->
-      <div class="tagline" id="comparative-results">Comparative Results</div>
-      <div class="section">
-        <p>
-          We compare KITE against SPIDER, a retargeting baseline that relies on hand-specified source-to-target part correspondences. On bottle pumping, SPIDER breaks down as the predefined correspondence misaligns with the task-relevant contact region, while KITE adapts contacts to each target embodiment.
-        </p>
-
-        <article class="task-block">
-          <div class="experiment-video-grid sim-grid" aria-label="Comparative results videos">
-            <figure class="experiment-video-card">
-              <span class="video-label video-label-target">KITE &middot; Allegro</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_allegro_right.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card">
-              <span class="video-label video-label-baseline">SPIDER &middot; Allegro</span>
-              <video class="gallery-video experiment-video" src="assets/videos/comparative_result/spider_allegro.mp4" data-speed="6" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card">
-              <span class="video-label video-label-target">KITE &middot; Barrett</span>
-              <video class="gallery-video experiment-video" src="assets/videos/experiments/sim/pumpbottle_use_barrett.m4v" autoplay muted playsinline loop></video>
-            </figure>
-            <figure class="experiment-video-card">
-              <span class="video-label video-label-baseline">SPIDER &middot; Barrett</span>
-              <video class="gallery-video experiment-video" src="assets/videos/comparative_result/spider_barrett.mp4" data-speed="6" autoplay muted playsinline loop></video>
-            </figure>
-          </div>
-        </article>
-      </div>
-
-      <div class="tagline" id="video-summary">Video Summary</div>
-      <div class="section">
+      <h2 class="tagline" id="video-summary">Video Summary</h2>
+      <section class="section" aria-labelledby="video-summary">
         <div class="main-video-container">
-          <video controls muted playsinline loop>
-            <source src="kite_video.mp4" type="video/mp4" />
+          <video controls playsinline preload="none" poster="assets/images/posters/summary.jpg" aria-label="KITE project video summary">
+            <source src="kite_video.mp4?v=2x-labels" type="video/mp4">
           </video>
         </div>
-      </div>
+      </section>
 
-      <div class="tagline" id="acknowledgement">Acknowledgement</div>
-      <div class="section acknowledgement-section">
+      <h2 class="tagline" id="acknowledgement">Acknowledgement</h2>
+      <section class="section acknowledgement-section" aria-labelledby="acknowledgement">
         <p>
-          We gratefully acknowledge use of the research computing resources of the Empire AI Consortium, Inc., with support from Empire State Development of the State of New York, the Simons Foundation, and the Secunda Family Foundation. This work was supported in part by the Amazon Research Awards and an NVIDIA Academic Grant. We thank Samuel Jin, Yunhao Cao, Jialiang Zhang, Chuanruo Ning, Xingyi He, Adhitya Polavaram, Zhenyu Wei, Qi Wu, Cory Fan, and Pranav Thakkar for constructive discussions and feedback. We thank Calvin Qiu, Adhitya Polavaram, Yunhao Cao, and Cory Fan for their generous help on real-world and simulation robot infrastructure.
+          We gratefully acknowledge use of the research computing resources of the Empire AI Consortium, Inc., with support from Empire State Development of the State of New York, the Simons Foundation, and the Secunda Family Foundation. This work was supported in part by the Amazon Research Awards and an NVIDIA Academic Grant. We thank Yunhao Cao, Jialiang Zhang, Chuanruo Ning, Xingyi He, Adhitya Polavaram, Zhenyu Wei, Qi Wu, Cory Fan, and Pranav Thakkar for constructive discussions and feedback. We thank Calvin Qiu, Adhitya Polavaram, Yunhao Cao, and Cory Fan for their generous help on real-world and simulation robot infrastructure.
         </p>
-      </div>
+      </section>
 
-      <div class="tagline" id="citation">Citation</div>
-      <div class="section">
+      <h2 class="tagline" id="citation">Citation</h2>
+      <section class="section" aria-labelledby="citation">
         <pre class="bibtex-block"><code>@misc{wang2026kitedecouplingkinematicsinteraction,
       title={KITE: Decoupling Kinematics and Interaction for Zero-Shot Cross-Embodiment Manipulation},
-      author={Qianxu Wang and Kuan Fang},
+      author={Qianxu Wang and Shengmiao Samuel Jin and Kuan Fang},
       year={2026},
       eprint={2606.22113},
       archivePrefix={arXiv},
       primaryClass={cs.RO},
       url={https://arxiv.org/abs/2606.22113},
 }</code></pre>
-      </div>
+      </section>
 
-    <!-- End of main content -->
     </main>
     <footer class="footer">Some website materials are adapted from  <a href="https://www.videomimic.net/" target="_blank">VideoMimic</a> and <a href="https://transic-robot.github.io/" target="_blank">TRANSIC</a></footer>
   </div>
-
-  <!-- ============================================================ -->
-  <!--  JS                                                          -->
-  <!-- ============================================================ -->
-  <script src="assets/js/full_screen_video.js"></script>
-  <script>
-    // Lazy loading for gallery videos only
-    document.addEventListener('DOMContentLoaded', function() {
-      // Create intersection observer
-      const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const video = entry.target;
-            // Start playing when video comes into view
-            if (video.paused) {
-              video.play().catch(e => console.log('Video play failed:', e));
-            }
-          } else {
-            const video = entry.target;
-            // Pause when video goes out of view (saves bandwidth)
-            if (!video.paused) {
-              video.pause();
-            }
-          }
-        });
-      }, {
-        threshold: 0.2 // Start playing when 20% of video is visible
-      });
-
-      // Apply lazy loading only to gallery videos (not hero or main video)
-      const galleryVideos = document.querySelectorAll('.gallery-video');
-      galleryVideos.forEach(video => {
-        // Remove autoplay attribute and observe
-        video.removeAttribute('autoplay');
-        var speed = video.dataset.speed ? parseFloat(video.dataset.speed) : 3;
-        video.defaultPlaybackRate = speed;
-        video.playbackRate = speed;
-        video.addEventListener('loadedmetadata', () => {
-          var s = video.dataset.speed ? parseFloat(video.dataset.speed) : 3;
-          video.defaultPlaybackRate = s;
-          video.playbackRate = s;
-        });
-        videoObserver.observe(video);
-        
-        // Set up video to be ready to play
-        video.load();
-      });
-    });
-  </script>
+  <script src="assets/js/full_screen_video.js?v=hero-carousel-3"></script>
+  <script src="assets/js/gallery.js?v=feedback-20261002-r3"></script>
+  <script src="assets/js/navigation.js?v=layout-2"></script>
+  <script src="assets/js/method_figure.js?v=feedback-20261002-r4"></script>
 </body>
 </html>

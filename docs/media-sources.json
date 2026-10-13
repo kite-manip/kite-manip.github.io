@@ -1,0 +1,492 @@
+{
+  "videos": [
+    {
+      "file": "assets/videos/v4/objects_placing_robotiq.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        9,
+        14
+      ],
+      "embedded_media": "ppt/media/media5.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "4aa6c51d95871090ad036463359f072a87b222e21c08c526357db5c549f890c3",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/objects_placing_allegro.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        9
+      ],
+      "embedded_media": "ppt/media/media2.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "4d634f21469bfd2050ca729f0a7c647b8ee12224ab1b3dff72570dc7c465a2f5",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/objects_placing_barrett.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        9
+      ],
+      "embedded_media": "ppt/media/media3.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "ad583b39a4380fe70228d7bc2bbf63fa02045b66479d3ea3925c65706053074d",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/objects_placing_wuji.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        9
+      ],
+      "embedded_media": "ppt/media/media4.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "66401f3258a19c564c13fe255449fca07dba0bddc2cfe0ca24a8d5d62ee89eb1",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/keyboard_pressing_wuji.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        10
+      ],
+      "embedded_media": "ppt/media/media6.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "46408c6f72477d05dd2bbf6dcc221db18e7521558ba55ef83624a7161a2729a8",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/keyboard_pressing_allegro.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        10
+      ],
+      "embedded_media": "ppt/media/media7.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "1ca3ae810d310713cee50f1ba52e28f5392593fbedfa1766106eef2d260648cf",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/keyboard_pressing_barrett.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        10
+      ],
+      "embedded_media": "ppt/media/media8.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "1a9bd36f0c3004cfeb8951522befe34d83d055ec1cd98fe29e0814ec5a51a0aa",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/keyboard_pressing_robotiq_stick.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        10
+      ],
+      "embedded_media": "ppt/media/media9.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "f548fab5750cddef8dc1d2cc6677f097fadf63c1c4718c528dfc073f0817061a",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/bottles_pumping_wuji.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        11
+      ],
+      "embedded_media": "ppt/media/media13.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "ee6f52fe824f60a0dfbcb58da259a65ad5d6f49a2960c0d40b2f419755121d69",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/bottles_pumping_allegro.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        11
+      ],
+      "embedded_media": "ppt/media/media11.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "fbcc851e81371c4aee029145d1228fe1c2f1acba7bf79f6d27aa3dbdd6601108",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/bottles_pumping_barrett.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        11
+      ],
+      "embedded_media": "ppt/media/media10.mp4",
+      "crop_left_top_right_bottom": [
+        8333,
+        8333,
+        8333,
+        8333
+      ],
+      "browser_playback_rate": 1,
+      "sha256": "bc3b1eec0defb169c2cbe44593f2fc3775fb72137c85befdd0a759ad5b67b94c",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/bottles_pumping_robotiq_stick.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        11
+      ],
+      "embedded_media": "ppt/media/media12.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "839a8b0df299e186f41bbc3294561c8f33b5b68051aed6f074e1bd9b6c61a95b",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/nut_rotating_xhand.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        12,
+        14
+      ],
+      "embedded_media": "ppt/media/media17.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "3fa1822cd59400d51b213fa699f37512b8407a29ec5cebc3f7d0f5bc3769cad1",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/nut_rotating_allegro.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        12
+      ],
+      "embedded_media": "ppt/media/media14.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "77a45ffe101a45beb4052aa3f2c7019255b23d6f5c29c28966b4271f82dacdf5",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/nut_rotating_barrett.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        12
+      ],
+      "embedded_media": "ppt/media/media15.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "9a74014087a0da871e46777162f0d12c089b5a72823168c381bae640d372a5a6",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/nut_rotating_wuji.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        12
+      ],
+      "embedded_media": "ppt/media/media16.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "50db51cbe274db0f24b80882f3cde527fc6ade44134990222fb432eee4e933b0",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/objects_placing_real.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        14
+      ],
+      "embedded_media": "ppt/media/media18.mov",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "fa74d51414e332ddf4966f3216d04c2edd7617727874c463cfedede7600564e1",
+      "color_conversion": "Source is iPhone HDR (HEVC Main 10, BT.2020, HLG). Tone-mapped to SDR BT.709 with ffmpeg: zscale linear (npl=200) -> BT.709 primaries -> Hable tonemap -> BT.709 transfer, resampled to 30 fps. npl chosen so wall and table luminance match the other real-world clips.",
+      "speedup_vs_slide_media": 1.5,
+      "speed_label": "3x"
+    },
+    {
+      "file": "assets/videos/v4/nut_rotating_real.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        14
+      ],
+      "embedded_media": "ppt/media/media19.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "c0f6abad262b96157b4919e3d3867b2bb430f6f8b45d0c6a4d7ff608f00e6935",
+      "speedup_vs_slide_media": 2,
+      "speed_label": "4x"
+    },
+    {
+      "file": "assets/videos/v4/keyboard_pressing_human.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        15
+      ],
+      "embedded_media": "ppt/media/media20.mp4",
+      "crop_left_top_right_bottom": [
+        9271,
+        8148,
+        4062,
+        5185
+      ],
+      "browser_playback_rate": 1,
+      "sha256": "d06f166993f8e39a0bbabd9ba90b30a9548e302f7c6eb51b09266c1f942b3972",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/keyboard_pressing_real.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        15
+      ],
+      "embedded_media": "ppt/media/media21.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "d14f41886222d8c0ac2e382c69c22c24016871009b33627df85db09e9995d4db",
+      "speedup_vs_slide_media": 1.5,
+      "speed_label": "3x"
+    },
+    {
+      "file": "assets/videos/v4/bottles_pumping_human.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        15
+      ],
+      "embedded_media": "ppt/media/media22.mp4",
+      "crop_left_top_right_bottom": [
+        13333,
+        7222,
+        0,
+        6111
+      ],
+      "browser_playback_rate": 1,
+      "sha256": "04f03104e835ce733a7db5c09f0d5995e8440e502651ba8c21df30d529ee8ea7",
+      "speedup_vs_slide_media": 2
+    },
+    {
+      "file": "assets/videos/v4/bottles_pumping_real.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        15
+      ],
+      "embedded_media": "ppt/media/media23.mov",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "e8e1b7e86e18f26d9775794129938f0acd6ba6db002bcaa2fe360ff2b1768880",
+      "speedup_vs_slide_media": 1.5,
+      "speed_label": "3x"
+    },
+    {
+      "file": "assets/videos/v4/oracle_intent_allegro.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        16
+      ],
+      "embedded_media": "ppt/media/media24.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "97712e848ca4d0223e1352ed05901e9a022bd909c4d08ce19dd2d08df9e71cc2"
+    },
+    {
+      "file": "assets/videos/v4/oracle_intent_barrett.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        16
+      ],
+      "embedded_media": "ppt/media/media10.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "7d756da6c348aca3d49861865faf9d5359e4e601b1ed6222f655a9485be0a7fc"
+    },
+    {
+      "file": "assets/videos/v4/spider_barrett.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        16
+      ],
+      "embedded_media": "ppt/media/media25.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "2dda130c677ef886730a36e3d25146b81a2a1139c382e0dff095a0f308d88b4d"
+    },
+    {
+      "file": "assets/videos/v4/spider_allegro.mp4",
+      "source_deck": "video_draft_v4.pptx",
+      "slides": [
+        16
+      ],
+      "embedded_media": "ppt/media/media26.mp4",
+      "crop_left_top_right_bottom": null,
+      "browser_playback_rate": 1,
+      "sha256": "05173f0e3cd4ca7a178f949d40659d086178c3a23c22fefaa01f5fbdc1c2a42e"
+    }
+  ],
+  "real_world_speed_labels": {
+    "objects_placing_real": "3x",
+    "keyboard_pressing_real": "3x",
+    "bottles_pumping_real": "3x",
+    "nut_rotating_real": "4x"
+  },
+  "speed_verification": "Simulation assets are encoded at 2x their slide media. Simulation task galleries apply an additional browser rate of 1.25x (1.5x for keyboard pressing), giving 2.5x/3x relative to slide media. Each real-world source demo is retimed to the duration of its deployment counterpart: 8 seconds for objects placing, keyboard pressing and bottles pumping (browser rate 0.75x); 12 seconds for nut rotating (browser rate 0.5x). Physical-robot clips retain their encoded speeds (3x/4x badges). Hero and comparative clips remain unchanged at browser rate 1x.",
+  "figures": {
+    "assets/images/kite_teaser_from_pdf.png": "paper images/teaser.pdf, CropBox",
+    "assets/images/kite_method_overview_from_pdf.png": "paper images/method_overview.pdf, CropBox",
+    "assets/images/analysis/execution_diversity_1.webp": "exp_half.pptx, slide 1, image13.png with slide crop",
+    "assets/images/analysis/execution_diversity_2.webp": "exp_half.pptx, slide 1, image15.png with slide crop",
+    "assets/images/analysis/execution_diversity_3.webp": "exp_half.pptx, slide 1, image14.png with slide crop",
+    "inline SVG: supervision": "Paper Figure 6: means 86.3, 84.7, 87.0, 89.0 and sample SD 3.2, 3.1, 2.6, 2.6; equally spaced demonstration budgets 0, 10, 50, 200.",
+    "inline SVG: latent": "Paper Table I: displayed task averages over three targets, unchanged from the previous website chart.",
+    "assets/images/kite_teaser_vector.svg": "Original paper images/teaser.pdf, exported by Poppler as SVG using its CropBox. Original paths and embedded images preserved. CSS multiply blending makes white reveal the page background; no figure content changed.",
+    "assets/images/kite_method_overview_vector.svg": "Original paper images/method_overview.pdf, exported by Poppler as SVG using its CropBox. Original paths and embedded images preserved. CSS multiply blending makes white reveal the page background; no figure content changed."
+  },
+  "summary": {
+    "file": "kite_video.mp4",
+    "source": "video_v4.mp4",
+    "changes": "Browser-compatible 1080p export with the original timeline, 2x labels on physical-robot clips as requested, and KITE (Oracle Intent) comparison labels."
+  },
+  "hero": {
+    "description": "Four-slide hero carousel, nut rotating first. Each clip is a real-world Wuji rollout (full frame) with its source demonstration burned in as a picture-in-picture; the demo is sped up with its real clip so both start and end together. Labels are HTML placed relative to the PiP.",
+    "pip_rect_px_in_1920x1080": [
+      96,
+      112,
+      560,
+      315
+    ],
+    "pip_border": "3 px #7b5fc4, 18 px corner radius, soft shadow",
+    "slides": [
+      {
+        "file_1080p": "assets/videos/hero/nut_rotating.mp4",
+        "file_720p": "assets/videos/hero/nut_rotating_720.mp4",
+        "poster": "assets/images/posters/hero_nut_rotating.jpg",
+        "seconds": 12,
+        "real_source": "slide media behind assets/videos/v4/nut_rotating_real.mp4 (2x)",
+        "real_extra_speedup": 2,
+        "speed_label": "4x",
+        "demo_source": "slide media behind assets/videos/v4/nut_rotating_xhand.mp4",
+        "demo_extra_speedup": 1,
+        "demo_crop_x0_y0_x1_y1": [
+          0.08,
+          0.05,
+          0.98,
+          0.95
+        ],
+        "sha256_1080p": "f86c6d8699d84bc6b5c93415a838d9837550940aa5ad13785e7e555e700f220b",
+        "real_crop_x_y_w_h_px": [
+          0,
+          140,
+          1440,
+          810
+        ],
+        "real_crop_note": "Zoomed 1.33x from the left 75% of the frame so the hand sits at ~2/3 width, clear of the PiP, with the right-edge clutter cut."
+      },
+      {
+        "file_1080p": "assets/videos/hero/objects_placing.mp4",
+        "file_720p": "assets/videos/hero/objects_placing_720.mp4",
+        "poster": "assets/images/posters/hero_objects_placing.jpg",
+        "seconds": 8,
+        "real_source": "slide media behind assets/videos/v4/objects_placing_real.mp4 (2x)",
+        "real_extra_speedup": 1.5,
+        "speed_label": "3x",
+        "demo_source": "slide media behind assets/videos/v4/objects_placing_robotiq.mp4",
+        "demo_extra_speedup": 1.5,
+        "demo_crop_x0_y0_x1_y1": [
+          0.12,
+          0.0,
+          1.0,
+          0.88
+        ],
+        "sha256_1080p": "1471ff17923215d6d71c7bae829a1e394c66fd1eafe937231825fdddac3a83d1"
+      },
+      {
+        "file_1080p": "assets/videos/hero/keyboard_pressing.mp4",
+        "file_720p": "assets/videos/hero/keyboard_pressing_720.mp4",
+        "poster": "assets/images/posters/hero_keyboard_pressing.jpg",
+        "seconds": 8,
+        "real_source": "slide media behind assets/videos/v4/keyboard_pressing_real.mp4 (2x)",
+        "real_extra_speedup": 1.5,
+        "speed_label": "3x",
+        "demo_source": "slide media behind assets/videos/v4/keyboard_pressing_human.mp4",
+        "demo_extra_speedup": 1.5,
+        "demo_crop_x0_y0_x1_y1": [
+          0.16,
+          0.04,
+          0.88,
+          0.76
+        ],
+        "sha256_1080p": "20e44caed33acef89962ed22db6d33c4cffe744532e2e7ce70938ef73eea629b"
+      },
+      {
+        "file_1080p": "assets/videos/hero/bottles_pumping.mp4",
+        "file_720p": "assets/videos/hero/bottles_pumping_720.mp4",
+        "poster": "assets/images/posters/hero_bottles_pumping.jpg",
+        "seconds": 8,
+        "real_source": "slide media behind assets/videos/v4/bottles_pumping_real.mp4 (2x)",
+        "real_extra_speedup": 1.5,
+        "speed_label": "3x",
+        "demo_source": "slide media behind assets/videos/v4/bottles_pumping_human.mp4",
+        "demo_extra_speedup": 1.5,
+        "demo_crop_x0_y0_x1_y1": [
+          0.09,
+          0.21,
+          0.87,
+          0.99
+        ],
+        "sha256_1080p": "99fad9d4ad8886429a3dd8ed7568a666d4f37cae24c255c7bfcd7475c48613e0"
+      }
+    ],
+    "speed_note": "Built from the 2x slide media. Nut rotating: real 2x further (24 s -> 12 s, labeled 4x), demo unchanged. Other tasks: real and demo both 1.5x further (12 s -> 8 s, real labeled 3x).",
+    "encoding": "H.264 High, CRF 24 (1080p) / 25 (720p); +2 CRF for nut rotating; BT.709 tagged; metadata stripped"
+  },
+  "simulation_gallery_playback_rates": {
+    "sim-objects-placing": 1.25,
+    "sim-keyboard-pressing": 1.5,
+    "sim-bottles-pumping": 1.25,
+    "sim-nut-rotating": 1.25
+  },
+  "comparison_annotations": [
+    {
+      "file": "assets/videos/v4/spider_barrett.mp4",
+      "show_from_seconds": 8,
+      "text": "Pressing contact slips off the pump",
+      "verification": "Reviewed the existing clip frame by frame around contact loss; consistent with the paper decoder-only comparison.",
+      "show_until": "End of clip (12 seconds); hidden when the clip loops or seeks before show_from_seconds.",
+      "tracked_region": "Pump and pressing contact",
+      "tracking": "One verified bounding box per original 10 fps frame in assets/js/gallery.js evidenceTracks. Boxes use 1920x1080 video coordinates and update with requestVideoFrameCallback; fallback uses the video clock. Captions and boxes share the same visibility update."
+    },
+    {
+      "file": "assets/videos/v4/spider_allegro.mp4",
+      "show_from_seconds": 9.5,
+      "text": "Bottle tips over",
+      "verification": "Reviewed the existing clip; the label appears after the bottle visibly falls.",
+      "show_until": "End of clip (12 seconds); hidden when the clip loops or seeks before show_from_seconds.",
+      "tracked_region": "Fallen bottle, including pump",
+      "tracking": "One verified bounding box per original 10 fps frame in assets/js/gallery.js evidenceTracks. Boxes use 1920x1080 video coordinates and update with requestVideoFrameCallback; fallback uses the video clock. Captions and boxes share the same visibility update."
+    }
+  ],
+  "real_world_source_playback_rates": {
+    "objects_placing_robotiq": 0.75,
+    "keyboard_pressing_human": 0.75,
+    "bottles_pumping_human": 0.75,
+    "nut_rotating_xhand": 0.5
+  },
+  "real_world_timing_review": {
+    "source_file_duration_seconds": 6,
+    "matched_source_and_execution_display_duration_seconds": {
+      "objects_placing": 8,
+      "keyboard_pressing": 8,
+      "bottles_pumping": 8,
+      "nut_rotating": 12
+    },
+    "verification": "Real-world source rate is 0.75 for the 8-second pairs and 0.5 for the 12-second nut rotating pair; compensates for the source files encoded at 2x. Execution speeds remain 3x/4x."
+  }
+}
