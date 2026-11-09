@@ -90,35 +90,6 @@
    .quick-links .quick-btn:hover .quick-icon-img{
      filter:brightness(0) saturate(100%) invert(16%) sepia(82%) saturate(3356%) hue-rotate(345deg) brightness(88%) contrast(96%);
    }
-   .quick-label-stack{
-     display:inline-flex;
-     flex-direction:column;
-     align-items:center;
-     gap:3px;
-   }
-   .soon-label{
-     color:#8b8b8b;
-     font-size:10px;
-     font-weight:600;
-     letter-spacing:.01em;
-   }
-   .quick-links .quick-btn-disabled,
-   .quick-links .quick-btn-disabled:hover,
-   .quick-links .quick-btn-disabled:focus,
-   .quick-links .quick-btn-disabled:active{
-     color:#8c8c8c;
-     background:var(--page-background);
-     box-shadow:none;
-     cursor:default;
-     opacity:.7;
-     pointer-events:none;
-     transform:none;
-   }
-   .quick-links .quick-btn-disabled .quick-icon-img,
-   .quick-links .quick-btn-disabled:hover .quick-icon-img{
-     filter:none;
-     opacity:.72;
-   }
    
    /* TAGLINES / SUBTITLES */
    .tagline{font-family:"Avenir Next","Inter","Helvetica Neue",Arial,sans-serif;font-size:24px;font-weight:500;color:#000;text-align:center;display:block;background:none;padding:0;margin:48px 0 24px}
